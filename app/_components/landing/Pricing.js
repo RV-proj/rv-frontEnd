@@ -1,5 +1,5 @@
 import BookFlexButton from "@/_ui/BookFlexButton";
-import Card from "@/_ui/PricingCard";
+import PricingCard from "@/_ui/PricingCard";
 import { CircleCheck } from "lucide-react";
 import { Info } from "lucide-react";
 
@@ -74,7 +74,7 @@ const Pricing = () => {
       {/* REVIEW  card */}
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         {cardData.map((card) => (
-          <Card key={card.id} {...card} />
+          <PricingCard key={card.id} {...card} />
         ))}
       </div>
     </section>
