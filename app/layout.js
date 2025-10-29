@@ -1,4 +1,5 @@
 import "@/globals.css";
+import Header from "@/_ui/Header";
 
 export const metadata = {
   title: "SurprisePlanner",
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-[#0a1024]">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
