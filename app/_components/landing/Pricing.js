@@ -15,7 +15,13 @@ const Pricing = () => {
       </div>
 
       {/* card */}
-      <div className=""></div>
+      <div className="">
+        {/* card container */}
+        <div>
+            {/* card 1 */}
+            {/* card 2 */}
+        </div>
+      </div>
     </section>
   );
 };
