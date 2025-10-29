@@ -2,6 +2,16 @@ import Card from "@/_ui/Card";
 import { CircleCheck } from "lucide-react";
 
 const Pricing = () => {
+  const cardData = [
+    {
+      id: 1,
+      title: "Flex+ Booking",
+    },
+    {
+      id: 2,
+      title: "Typical Marketplace",
+    },
+  ];
   return (
     <section className="container mx-auto">
       {/* pricing */}
@@ -19,7 +29,9 @@ const Pricing = () => {
 
       {/* REVIEW  card */}
       <div className="mt-10">
-        <Card />
+        {cardData.map((card) => (
+          <Card key={card.id} {...card} />
+        ))}
       </div>
     </section>
   );
