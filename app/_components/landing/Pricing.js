@@ -52,11 +52,15 @@ const Pricing = () => {
       ],
     },
   ];
+
+  //   notes
+  // container will contain max-w-7xl px-4 sm:px-6 pt-10
+
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto max-w-7xl px-4 sm:px-6 pt-10">
       {/* pricing */}
       <div>
-        <h1 className="text-center mt-5 text-[#27DBFD] uppercase font-semibold text-xs">
+        <h1 className="text-center  text-[#27DBFD] uppercase font-semibold text-xs">
           Pricing
         </h1>
         <p className="text-center text-4xl text-white font-bold mt-2">
