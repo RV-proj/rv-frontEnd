@@ -1,19 +1,19 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Phone, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { Phone, ChevronRight, Sparkles, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import BookFlexButton from "./BookFlexButton";
 import CallButton from "./CallButton";
 
-const NAV_LINKS = [
+const links = [
   { href: "#", label: "Why Flex+" },
   { href: "#", label: "Destinations" },
   { href: "/divine", label: "Experiences" },
 ];
 
-export default function Navbar({ onOpen }) {
+export default function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -29,16 +29,15 @@ export default function Navbar({ onOpen }) {
           <Logo />
         </div>
 
-        {/* Desktop nav */}
         <nav className="hidden items-center gap-6 text-sm text-white/80 md:flex">
-          {NAV_LINKS.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-white">
+          {links.map((l, index) => (
+            <Link key={index} href={l.href} className="hover:text-white">
               {l.label}
             </Link>
           ))}
         </nav>
 
-        {/* Right actions (desktop) */}
+        {/* Desktop-view right portion */}
         <div className="hidden items-center gap-2 md:flex">
           <Link
             href="tel:+18596229999"
@@ -49,7 +48,7 @@ export default function Navbar({ onOpen }) {
           <BookFlexButton />
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile-view Right Hamburger */}
         <button
           type="button"
           className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white/80 hover:bg-white/10 md:hidden"
@@ -61,7 +60,7 @@ export default function Navbar({ onOpen }) {
         </button>
       </div>
 
-      {/* Mobile menu panel */}
+      {/* Mobile-view dropdown links */}
       <div
         className={`md:hidden transition-[max-height,opacity] duration-200 ease-out overflow-hidden ${
           open ? "max-h-[60vh] opacity-100" : "max-h-0 opacity-0"
@@ -69,9 +68,9 @@ export default function Navbar({ onOpen }) {
       >
         <div className="mx-auto max-w-7xl px-3 pb-3 sm:px-6">
           <nav className="flex flex-col gap-1 rounded-xl border border-white/10 bg-slate-900/70 p-2">
-            {NAV_LINKS.map((l) => (
+            {links.map((l, index) => (
               <Link
-                key={l.href}
+                key={index}
                 href={l.href}
                 className="rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/5 hover:text-white"
               >
