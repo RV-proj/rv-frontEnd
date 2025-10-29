@@ -1,3 +1,6 @@
+import Card from "@/_ui/Card";
+import { CircleCheck } from "lucide-react";
+
 const Pricing = () => {
   return (
     <section className="container mx-auto">
@@ -14,13 +17,9 @@ const Pricing = () => {
         </p>
       </div>
 
-      {/* card */}
-      <div className="">
-        {/* card container */}
-        <div>
-            {/* card 1 */}
-            {/* card 2 */}
-        </div>
+      {/* REVIEW  card */}
+      <div className="mt-10">
+        <Card />
       </div>
     </section>
   );
