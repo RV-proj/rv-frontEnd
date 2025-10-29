@@ -27,6 +27,7 @@ const Pricing = () => {
         },
       ],
       action: <BookFlexButton />,
+      badge: "Recommended",
     },
     {
       id: 2,
