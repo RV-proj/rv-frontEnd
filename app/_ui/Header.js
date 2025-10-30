@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Logo from "./Logo";
 import BookFlexButton from "./BookFlexButton";
@@ -10,7 +10,7 @@ import CallButton from "./CallButton";
 const links = [
   { href: "#", label: "Why Flex+" },
   { href: "#", label: "Destinations" },
-  { href: "/divine", label: "Experiences" },
+  { href: "#", label: "Experiences" },
 ];
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-slate-900/80 backdrop-blur supports-backdrop-filter:bg-slate-900/60">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-slate-900/80 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 sm:px-6">
         <div className="flex items-center gap-3">
           <Logo />
@@ -39,12 +39,7 @@ export default function Header() {
 
         {/* Desktop-view right portion */}
         <div className="hidden items-center gap-2 md:flex">
-          <Link
-            href="tel:+18596229999"
-            className="items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-white/80 hover:bg-white/10 inline-flex"
-          >
-            <Phone className="h-4 w-4" /> 24/7 Help
-          </Link>
+          <CallButton />
           <BookFlexButton />
         </div>
 
