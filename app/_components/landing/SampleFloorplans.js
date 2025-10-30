@@ -5,13 +5,83 @@ const SampleFloorplans = () => {
     {
       id: 1,
       title: "Small",
-      size: "1000 sq ft",
-      beds: 2,
-      details: "Spacious",
+      size: "18–22 ft",
+      beds: "1 BEDS",
+      cardDetails: [
+        {
+          feature: "Rear Bath + Dinette",
+          img: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+        },
+        {
+          feature: "Murphy Bed Studio",
+          img: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+        },
+      ],
     },
-    { id: 2, title: "Small", size: "1200 sq ft", beds: 3, details: "Modern" },
-    { id: 2, title: "Small", size: "1200 sq ft", beds: 3, details: "Modern" },
-    { id: 2, title: "Small", size: "1200 sq ft", beds: 3, details: "Modern" },
+    {
+      id: 2,
+      title: "Cozy",
+      size: "18–22 ft",
+      beds: "1 BEDS",
+      cardDetails: [
+        {
+          feature: "Loft Bedroom",
+          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+        },
+        {
+          feature: "Compact Kitchen",
+          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: "Modern",
+      size: "118–22 ft",
+      beds: "1 BEDS",
+      cardDetails: [
+        {
+          feature: "Open Floor Plan",
+          img: "https://images.unsplash.com/photo-1696604534314-afe50575c131?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+        },
+        {
+          feature: "Balcony Access",
+          img: "https://images.unsplash.com/photo-1696604534314-afe50575c131?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+        },
+      ],
+    },
+    {
+      id: 4,
+      title: "Spacious",
+      size: "118–22 ft",
+      beds: "1 BEDS",
+      cardDetails: [
+        {
+          feature: "Master Suite",
+          img: "https://images.unsplash.com/photo-1566272726777-91f06285e3c9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+        },
+        {
+          feature: "Walk-in Closet",
+          img: "https://images.unsplash.com/photo-1566272726777-91f06285e3c9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+        },
+      ],
+    },
+    {
+      id: 5,
+      title: "Luxury",
+      size: "218–22 ft",
+      beds: "1 BEDS",
+      cardDetails: [
+        {
+          feature: "Gourmet Kitchen",
+          img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+        },
+        {
+          feature: "Home Office",
+          img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+        },
+      ],
+    },
   ];
 
   //   notes
