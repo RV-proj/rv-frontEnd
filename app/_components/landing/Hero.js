@@ -15,7 +15,7 @@ export default function Hero() {
           </Pill>
           <h1 className="mt-4 text-balance text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
             Book the <span className="text-cyan-300">Right RV</span> — and often
-            get a
+            get a{" "}
             <span className="bg-linear-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
               Free Upgrade
             </span>

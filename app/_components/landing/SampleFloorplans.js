@@ -15,7 +15,7 @@ const SampleFloorplans = () => {
         },
         {
           feature: "Murphy Bed Studio",
-          img: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+          img: "https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
         },
       ],
     },
@@ -31,7 +31,7 @@ const SampleFloorplans = () => {
         },
         {
           feature: "Compact Kitchen",
-          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+          img: "https://images.unsplash.com/photo-1532372576444-dda954194ad0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         },
       ],
     },
@@ -47,7 +47,7 @@ const SampleFloorplans = () => {
         },
         {
           feature: "Balcony Access",
-          img: "https://images.unsplash.com/photo-1696604534314-afe50575c131?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+          img: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         },
       ],
     },
@@ -63,7 +63,7 @@ const SampleFloorplans = () => {
         },
         {
           feature: "Walk-in Closet",
-          img: "https://images.unsplash.com/photo-1566272726777-91f06285e3c9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+          img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
         },
       ],
     },
@@ -79,7 +79,7 @@ const SampleFloorplans = () => {
         },
         {
           feature: "Home Office",
-          img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+          img: "https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
         },
       ],
     },
