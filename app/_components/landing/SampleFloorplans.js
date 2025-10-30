@@ -23,9 +23,7 @@ const SampleFloorplans = () => {
       </div>
 
       {/* card */}
-      <div className="mt-10">
-        <FloorPlansCard />
-      </div>
+      <div className="mt-10">{/* <FloorPlansCard /> */}</div>
     </section>
   );
 };
