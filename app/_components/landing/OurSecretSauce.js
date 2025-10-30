@@ -23,8 +23,33 @@ const OurSecretSauce = () => {
       </div>
 
       {/* card */}
-      <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur ">
-        <Sparkles className=" h-10 w-10 text-cyan-300" />
+      <div className="flex justify-center mt-10">
+        <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur w-[70%]">
+          <div className="flex flex-col items-center gap-4">
+            <Sparkles className="h-10 w-10 text-cyan-300 block mx-auto " />
+
+            <div className="px-2">
+              <p className="text-pretty text-white/80 text-center">
+                Why spend hours on marketplaces with extra fees and hit-or-miss
+                quality? Flex+ activates our internal booking engine—combining
+                AI matching with a curated pro-owner network—to lock in your
+                setup at unbeatable value.
+              </p>
+              <p className="text-pretty text-white/80 text-center mt-3">
+                You get{" "}
+                <strong data-ninja-font="arial_bold_normal_qxjpy">
+                  instant confirmation
+                </strong>
+                , transparent pricing, and support that goes the extra mile. We
+                aim for the{" "}
+                <strong data-ninja-font="arial_bold_normal_qxjpy">
+                  best deal, guaranteed
+                </strong>
+                , and often surprise guests with upgrades.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
