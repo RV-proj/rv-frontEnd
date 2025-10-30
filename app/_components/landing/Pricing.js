@@ -4,6 +4,7 @@ import { CircleCheck } from "lucide-react";
 import { Info } from "lucide-react";
 
 const Pricing = () => {
+  // NOTE test json data
   const cardData = [
     {
       id: 1,

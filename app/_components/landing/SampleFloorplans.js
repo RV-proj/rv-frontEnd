@@ -1,6 +1,7 @@
 import FloorPlansCard from "@/_ui/FloorPlansCard";
 
 const SampleFloorplans = () => {
+  // NOTE  test json data
   const floorData = [
     {
       id: 1,
