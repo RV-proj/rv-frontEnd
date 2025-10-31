@@ -5,7 +5,7 @@ export default function BookFlexButton({ color = "default" }) {
     "group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold transition active:translate-y-px";
 
   const colorClasses =
-    color === "white"
+    color === "blur"
       ? "bg-white/5 text-white/60 hover:bg-white/10"
       : "bg-cyan-400 text-slate-900 hover:bg-cyan-300";
 

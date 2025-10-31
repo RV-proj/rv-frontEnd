@@ -9,12 +9,18 @@ import ForOwners from "./_components/landing/ForOwners";
 import Faq from "./_components/landing/Faq";
 import Ready from "./_components/landing/Ready";
 import Footer from "./_components/Footer/Footer";
+import HowItWorks from "./_components/landing/HowItWorks";
+import RVSelector from "./_components/landing/RVSelector";
+import Included from "./_components/landing/Included";
 
 export default function Page() {
   return (
     <>
       <Hero />
       <Why />
+      <HowItWorks />
+      <RVSelector />
+      <Included />
       <Pricing />
       <Divider />
       <OurSecretSauce />
@@ -27,7 +33,7 @@ export default function Page() {
       <Divider />
       <Faq />
       <Ready />
-      <Footer/>
+      <Footer />
     </>
   );
 }
