@@ -5,6 +5,8 @@ import OurSecretSauce from "./_components/landing/OurSecretSauce";
 import SampleFloorplans from "./_components/landing/SampleFloorplans";
 import Divider from "./_ui/Divider";
 import HappyGuests from "./_components/landing/HappyGuests";
+import ForOwners from "./_components/landing/ForOwners";
+import Faq from "./_components/landing/Faq";
 
 export default function Page() {
   return (
@@ -19,6 +21,9 @@ export default function Page() {
       <Divider />
       <HappyGuests />
       <Divider />
+      <ForOwners />
+      <Divider />
+      <Faq />
     </>
   );
 }

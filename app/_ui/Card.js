@@ -11,7 +11,10 @@ export default function Card({ icon, title, text, review, userName }) {
         </div>
 
         <div>
-          <p className="text-sm text-white/80">&quot;{review}&quot;</p>
+          {/* condition applies for empty review  */}
+          {review ? (
+            <p className="text-sm text-white/80">&quot;{review}&quot;</p>
+          ) : null}
           <h1 className="mt-2 text-xs font-semibold text-white/60">
             {userName}
           </h1>
