@@ -7,6 +7,8 @@ import Divider from "./_ui/Divider";
 import HappyGuests from "./_components/landing/HappyGuests";
 import ForOwners from "./_components/landing/ForOwners";
 import Faq from "./_components/landing/Faq";
+import Ready from "./_components/landing/Ready";
+import Footer from "./_components/Footer/Footer";
 
 export default function Page() {
   return (
@@ -24,6 +26,8 @@ export default function Page() {
       <ForOwners />
       <Divider />
       <Faq />
+      <Ready />
+      <Footer/>
     </>
   );
 }
