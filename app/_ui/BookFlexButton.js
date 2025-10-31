@@ -10,7 +10,7 @@ export default function BookFlexButton({ color = "default" }) {
       : "bg-cyan-400 text-slate-900 hover:bg-cyan-300";
 
   return (
-    <button className={`${baseClasses} ${colorClasses}`}>
+    <button className={`${baseClasses} ${colorClasses} cursor-pointer`}>
       <Sparkles className="h-4 w-4 transition group-hover:rotate-12" />
       <span>Book Flex+ Now</span>
       <ChevronRight className="h-4 w-4" />
