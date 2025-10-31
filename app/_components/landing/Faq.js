@@ -49,10 +49,11 @@ const Faq = () => {
         </div>
 
         {/* Accordion */}
-        <div className="mt-7 space-y-3">
+        <div className="mt-7 space-y-3 ">
           {faqData.map((item, index) => (
             <Accordion
               key={index}
+              indexNum={index}
               question={item.question}
               answer={item.answer}
             />

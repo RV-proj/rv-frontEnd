@@ -6,8 +6,8 @@ export default function BookFlexButton({ color = "default" }) {
 
   const colorClasses =
     color === "white"
-      ? "bg-white/5 text-white/60 hover:bg-white/10"
-      : "bg-cyan-400 text-slate-900 hover:bg-cyan-300";
+      ? "bg-white text-slate-900 hover:bg-white/10"
+      : "bg-cyan-400 text-slate-900 hover:bg-white/90";
 
   return (
     <button className={`${baseClasses} ${colorClasses} cursor-pointer`}>
