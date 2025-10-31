@@ -1,4 +1,4 @@
-export default function Card({ icon, title, text }) {
+export default function Card({ icon, title, text, review, userName }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur">
       <div className="flex items-start gap-3">
@@ -8,6 +8,13 @@ export default function Card({ icon, title, text }) {
         <div>
           <h3 className="font-bold text-white">{title}</h3>
           <p className="mt-1 text-sm text-white/70">{text}</p>
+        </div>
+
+        <div>
+          <p className="text-sm text-white/80">&quot;{review}&quot;</p>
+          <h1 className="mt-2 text-xs font-semibold text-white/60">
+            {userName}
+          </h1>
         </div>
       </div>
     </div>
