@@ -25,9 +25,9 @@ const OurSecretSauce = () => {
 
         {/* card */}
         <div className="flex justify-center mt-10">
-          <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur w-[70%]">
+          <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur md:w-[70%]">
             <div className="flex flex-col items-center gap-4">
-              <Sparkles className="h-10 w-10 text-cyan-300 block mx-auto " />
+              <Sparkles className="h-10 w-10  text-cyan-300 block mx-auto " />
 
               <div className="px-2">
                 <p className="text-pretty text-white/80 text-center">

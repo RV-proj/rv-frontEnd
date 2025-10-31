@@ -6,7 +6,7 @@ const Ready = () => {
       <div className="bg-linear-to-r from-cyan-600 to-blue-600 py-8">
         <div className="container mx-auto  max-w-7xl px-4 sm:px-6">
           {/* flex here */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center md:flex-row flex-col md:justify-between justify-center md:gap-0 gap-5 md:text-start text-center">
             {/* text */}
             <div>
               <h1 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
