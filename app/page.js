@@ -9,12 +9,14 @@ import ForOwners from "./_components/landing/ForOwners";
 import Faq from "./_components/landing/Faq";
 import Ready from "./_components/landing/Ready";
 import Footer from "./_components/Footer/Footer";
+import HowItWorks from "./_components/landing/HowItWorks";
 
 export default function Page() {
   return (
     <>
       <Hero />
       <Why />
+      <HowItWorks />
       <Pricing />
       <Divider />
       <OurSecretSauce />
@@ -27,7 +29,7 @@ export default function Page() {
       <Divider />
       <Faq />
       <Ready />
-      <Footer/>
+      <Footer />
     </>
   );
 }
