@@ -11,6 +11,7 @@ import Ready from "./_components/landing/Ready";
 import Footer from "./_components/Footer/Footer";
 import HowItWorks from "./_components/landing/HowItWorks";
 import RVSelector from "./_components/landing/RVSelector";
+import Included from "./_components/landing/Included";
 
 export default function Page() {
   return (
@@ -19,6 +20,7 @@ export default function Page() {
       <Why />
       <HowItWorks />
       <RVSelector />
+      <Included />
       <Pricing />
       <Divider />
       <OurSecretSauce />
