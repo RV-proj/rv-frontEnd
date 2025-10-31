@@ -10,6 +10,7 @@ import Faq from "./_components/landing/Faq";
 import Ready from "./_components/landing/Ready";
 import Footer from "./_components/Footer/Footer";
 import HowItWorks from "./_components/landing/HowItWorks";
+import RVSelector from "./_components/landing/RVSelector";
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
       <Hero />
       <Why />
       <HowItWorks />
+      <RVSelector />
       <Pricing />
       <Divider />
       <OurSecretSauce />
