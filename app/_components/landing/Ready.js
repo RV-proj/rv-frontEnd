@@ -18,7 +18,7 @@ const Ready = () => {
             </div>
 
             {/* button */}
-            <BookFlexButton />
+            <BookFlexButton color="white" />
           </div>
         </div>
       </div>
