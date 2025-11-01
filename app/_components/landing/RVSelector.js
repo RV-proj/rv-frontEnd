@@ -3,7 +3,7 @@
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 
-const RV_TYPES = {
+const rv = {
   Small: {
     label: "Small",
     people: "2 – 4",
@@ -68,7 +68,7 @@ export default function RVSelector() {
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {Object.keys(RV_TYPES).map((k) => (
+          {Object.keys(rv).map((k) => (
             <button
               key={k}
               onClick={() => {
@@ -80,11 +80,11 @@ export default function RVSelector() {
               <div className="flex items-center justify-between">
                 <h4 className="font-bold text-white">{k}</h4>
                 <span className="rounded-md bg-white/10 px-2 py-0.5 text-[10px] uppercase tracking-wider text-white/70 group-hover:text-white">
-                  {RV_TYPES[k].length}
+                  {rv[k].length}
                 </span>
               </div>
               <p className="mt-1 text-xs text-white/70">
-                {RV_TYPES[k].people} • {RV_TYPES[k].beds} beds
+                {rv[k].people} • {rv[k].beds} beds
               </p>
               <div className="mt-3 h-24 w-full overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-slate-800 to-slate-900">
                 <img
@@ -95,7 +95,7 @@ export default function RVSelector() {
               </div>
               <div className="mt-3 flex items-center justify-between text-sm">
                 <span className="text-white/70">
-                  From {RV_TYPES[k].baseNightly}/night
+                  From {rv[k].baseNightly}/night
                 </span>
                 <span className="inline-flex items-center gap-1 text-cyan-300">
                   Flex+ <ChevronRight className="h-4 w-4" />
