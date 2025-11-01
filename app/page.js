@@ -12,6 +12,7 @@ import Footer from "./_components/Footer/Footer";
 import HowItWorks from "./_components/landing/HowItWorks";
 import RVSelector from "./_components/landing/RVSelector";
 import Included from "./_components/landing/Included";
+import VisualStyleByLevel from "./_components/landing/VisualStyleByLevel";
 
 export default function Page() {
   return (
@@ -20,6 +21,10 @@ export default function Page() {
       <Why />
       <HowItWorks />
       <RVSelector />
+
+      <VisualStyleByLevel />
+      <Divider />
+
       <Included />
       <Pricing />
       <Divider />
