@@ -78,7 +78,7 @@ export default function RVSelector() {
               className="group rounded-2xl border border-white/10 bg-white/5 p-4 text-left transition hover:border-cyan-400/40 hover:bg-white/10"
             >
               <div className="flex items-center justify-between">
-                <h4 className="font-bold">{k}</h4>
+                <h4 className="font-bold text-white">{k}</h4>
                 <span className="rounded-md bg-white/10 px-2 py-0.5 text-[10px] uppercase tracking-wider text-white/70 group-hover:text-white">
                   {RV_TYPES[k].length}
                 </span>
