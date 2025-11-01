@@ -8,7 +8,7 @@ const Accordion = ({ indexNum, question, answer, openIndex, setOpenIndex }) => {
     <div>
       <div
         key={indexNum}
-        className="rounded-xl border border-white/10 bg-white/5 p-4 overflow-hidden transition-all duration-300 cursor-pointer"
+        className="rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 cursor-pointer"
       >
         <button
           onClick={() => toggleAccordion(indexNum)}

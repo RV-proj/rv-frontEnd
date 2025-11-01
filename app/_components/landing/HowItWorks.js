@@ -1,5 +1,4 @@
 import Card from "@/_ui/Card";
-import { Tally1, Tally2, Tally3 } from "lucide-react";
 
 export default function HowItWorks() {
   return (
@@ -15,17 +14,17 @@ export default function HowItWorks() {
         </div>
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
           <Card
-            icon={<Tally1 />}
+            icon={1}
             title="Choose your type"
             text="Pick Small → Double XL and share your dates, location and any must-haves."
           />
           <Card
-            icon={<Tally2 />}
+            icon={2}
             title="Owners compete to win"
             text="We alert top-rated local owners. The first qualified match accepts and locks your trip."
           />
           <Card
-            icon={<Tally3 />}
+            icon={3}
             title="Delivered & ready"
             text="We handle delivery, hookups and walkthrough. Support is on-call the entire stay."
           />
