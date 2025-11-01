@@ -1,6 +1,11 @@
+"use client";
+
 import Accordion from "@/_ui/Accordion";
+import { useState } from "react";
 
 const Faq = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   // NOTE demo json
   const faqData = [
     {
@@ -56,6 +61,8 @@ const Faq = () => {
               indexNum={index}
               question={item.question}
               answer={item.answer}
+              openIndex={openIndex}
+              setOpenIndex={setOpenIndex}
             />
           ))}
         </div>
