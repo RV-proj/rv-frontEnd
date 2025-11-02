@@ -1,5 +1,8 @@
+"use client";
+
 import PickSizeCard from "@/_ui/PickSizeCard";
 import { Gem, Sparkles } from "lucide-react";
+import { useState } from "react";
 
 const PickSize = () => {
   // test api
@@ -61,6 +64,8 @@ const PickSize = () => {
     },
   ];
 
+  const [selectedId, setSelectedId] = useState(pickSizeCardData[0].id);
+
   //   notes
   // container will contain max-w-7xl px-4 sm:px-6 pt-10
   return (
@@ -97,9 +102,14 @@ const PickSize = () => {
           </div>
 
           {/* card */}
-          <div className="pt-5 grid grid-cols-1 gap-4 sm:grid-cols-5">
+          <div className="pt-5 grid grid-cols-1 gap-4 sm:grid-cols-5 md:grid-cols-3 lg:grid-cols-5">
             {pickSizeCardData.map((card) => (
-              <PickSizeCard key={card.id} {...card} />
+              <PickSizeCard
+                key={card.id}
+                {...card}
+                isSelected={selectedId === card.id}
+                onClick={() => setSelectedId(card.id)}
+              />
             ))}
           </div>
         </div>

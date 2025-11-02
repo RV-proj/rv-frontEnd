@@ -16,7 +16,7 @@ const VisualStyleByLevel = () => {
     {
       id: 2,
       plan: "Standard",
-      text: "Newer models &amp; more features. Premium emphasizes refined finishes and a modern look.",
+      text: "Newer models and more features. Premium emphasizes refined finishes and a modern look.",
       img: "https://images.unsplash.com/photo-1635492346092-729ba774b9e4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
       badgeColor: "bg-cyan-900 border-cyan-600",
       textColor: "text-cyan-200",
@@ -25,7 +25,7 @@ const VisualStyleByLevel = () => {
     {
       id: 3,
       plan: "Premium",
-      text: "Top-tier, feature-rich &amp; like-new. Premium emphasizes refined finishes and a modern look.",
+      text: "Top-tier, feature-rich and like-new. Premium emphasizes refined finishes and a modern look.",
       img: "https://images.unsplash.com/photo-1468802337661-685a628d58a1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
       badgeColor:
         " bg-gradient-to-r from-cyan-950 via-fuchsia-950 to-purple-950 border-fuchsia-700",

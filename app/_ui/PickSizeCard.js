@@ -1,16 +1,21 @@
 import { Check } from "lucide-react";
 import Image from "next/image";
 
-const PickSizeCard = ({ size, desc, benefits, img }) => {
+const PickSizeCard = ({ size, desc, benefits, img, isSelected, onClick }) => {
   return (
-    <div className="rounded-2xl overflow-hidden border text-left bg-slate-900 ring ring-cyan-400 border-transparent transform hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+    <div
+      onClick={onClick}
+      className={`rounded-2xl overflow-hidden border text-left bg-slate-900 transform hover:-translate-y-2 transition-all duration-300 cursor-pointer ${
+        isSelected ? "ring ring-cyan-400 border-cyan-400" : "border-transparent"
+      }`}
+    >
       <div className="relative">
         {/* img */}
         <Image
           src={img}
           alt=""
-          width={200}
-          height={200}
+          width={100}
+          height={100}
           className="object-cover h-[150px] w-full brightness-50"
         />
         {/* text */}
