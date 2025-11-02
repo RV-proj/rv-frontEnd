@@ -19,7 +19,6 @@ const VisualStyleByLevelCard = ({
           alt="RVEEDOM Flex+"
           width={200}
           height={200}
-          priority
           className="h-auto w-full object-cover"
         />
         <div className={`absolute inset-0 ${backgroundColor}`}></div>

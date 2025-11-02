@@ -1,5 +1,6 @@
 import "@/globals.css";
 import Header from "@/_ui/Header";
+import Footer from "@/_ui/Footer";
 
 export const metadata = {
   title: "RV",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
       <body className="bg-[#0a1024]">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
