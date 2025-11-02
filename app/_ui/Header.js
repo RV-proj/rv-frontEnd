@@ -11,6 +11,7 @@ const links = [
   { href: "#", label: "Why Flex+" },
   { href: "#", label: "Destinations" },
   { href: "#", label: "Experiences" },
+  { href: "/rvTypes", label: "RV Types" },
 ];
 
 export default function Header() {

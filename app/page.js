@@ -8,10 +8,11 @@ import HappyGuests from "@/_components/Landing/HappyGuests";
 import ForOwners from "@/_components/Landing/ForOwners";
 import Faq from "@/_components/Landing/Faq";
 import Ready from "@/_components/Landing/Ready";
-import Footer from "@/_ui/Footer";
+
 import HowItWorks from "@/_components/Landing/HowItWorks";
 import RVSelector from "@/_components/Landing/RVSelector";
 import Included from "@/_components/Landing/Included";
+import VisualStyleByLevel from "@/_components/Landing/VisualStyleByLevel";
 
 export default function Page() {
   return (
@@ -20,6 +21,10 @@ export default function Page() {
       <Why />
       <HowItWorks />
       <RVSelector />
+
+      <VisualStyleByLevel />
+      <Divider />
+
       <Included />
       <Pricing />
       <Divider />
@@ -33,7 +38,6 @@ export default function Page() {
       <Divider />
       <Faq />
       <Ready />
-      <Footer />
     </>
   );
 }
