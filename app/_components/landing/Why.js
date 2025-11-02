@@ -45,7 +45,7 @@ export default function Why() {
           />
         </div>
 
-        <div className="mt-8 rounded-2xl border border-white/10 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6 text-sm text-white/80">
+        <div className="mt-8 rounded-2xl border border-white/10 bg-linear-to-r from-cyan-500/10 to-blue-500/10 p-6 text-sm text-white/80">
           <p className="flex items-center gap-2">
             <Info className="h-4 w-4 text-cyan-300" /> Flex+ works for
             vacations, events, tailgates, film/production, emergency housing and
