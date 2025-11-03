@@ -67,7 +67,7 @@ export default function YourSelection() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6 items-start">
+      <div className="grid lg:grid-cols-2 gap-6 items-start  pt-5">
         <VisualCard />
         <div className="space-y-4">
           <TripDetails />
