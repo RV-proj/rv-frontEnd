@@ -14,7 +14,7 @@ const QualityLevel = () => {
       badgeColor: "bg-slate-800 border-slate-600",
       textColor: "text-slate-300",
       backgroundColor:
-        "bg-gradient-to-br from-slate-600 to-slate-800 opacity-50",
+        "bg-gradient-to-br from-slate-600 to-slate-800 opacity-25",
       qualityScore: "73",
       textColor: "text-slate-300",
       slogan: "Reliable, essentials covered",
@@ -30,7 +30,7 @@ const QualityLevel = () => {
       plan: "Standard",
       badgeColor: "bg-cyan-900 border-cyan-600",
       textColor: "text-slate-300",
-      backgroundColor: "bg-gradient-to-br from-cyan-500 to-cyan-700 opacity-50",
+      backgroundColor: "bg-gradient-to-br from-cyan-500 to-cyan-700 opacity-25",
       qualityScore: "81",
       textColor: "text-cyan-200",
       slogan: "Newer models & more features",
@@ -48,7 +48,7 @@ const QualityLevel = () => {
         " bg-gradient-to-r from-cyan-950 via-fuchsia-950 to-purple-950 border-fuchsia-700",
       textColor: "text-slate-300",
       backgroundColor:
-        "bg-gradient-to-br from-cyan-400 via-fuchsia-400 to-purple-600 opacity-50",
+        "bg-gradient-to-br from-cyan-400 via-fuchsia-400 to-purple-600 opacity-25",
       qualityScore: "88",
       textColor: "text-fuchsia-200",
       slogan: "Top-tier, feature-rich & like-new",

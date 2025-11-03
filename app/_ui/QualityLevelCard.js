@@ -1,4 +1,5 @@
 import { Check, Gem } from "lucide-react";
+import TierBadge from "./TierBadge";
 
 const QualityLevelCard = ({
   badgeColor,
