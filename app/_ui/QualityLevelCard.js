@@ -15,7 +15,7 @@ const QualityLevelCard = ({
   return (
     <div
       onClick={onClick}
-      className={`rounded-2xl p-4 border relative overflow-hidden border-transparent cursor-pointer ${
+      className={`rounded-2xl p-4 border relative z-10 overflow-hidden border-transparent cursor-pointer ${
         isSelected ? "ring ring-cyan-400 border-cyan-400" : "border-transparent"
       }`}
     >
