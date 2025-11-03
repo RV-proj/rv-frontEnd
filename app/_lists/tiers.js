@@ -1,5 +1,3 @@
-// /components/tiers.js
-
 export const tiers = {
   Basic: {
     label: "Basic",
