@@ -1,4 +1,6 @@
 import { Check, Gem } from "lucide-react";
+import TierBadge from "./TierBadge";
+import QualityBadge from "./QualityBadge";
 
 const QualityLevelCard = ({
   badgeColor,
@@ -25,7 +27,8 @@ const QualityLevelCard = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 w-[70%]">
           {/* badge */}
-          <div
+          <TierBadge tierKey={plan} />
+          {/* <div
             className={`flex items-center gap-2 px-2 py-1 rounded-full border ${badgeColor}`}
           >
             <div className="flex items-center gap-1">
@@ -36,16 +39,12 @@ const QualityLevelCard = ({
             <h1 className={` font-normal text-sm capitalize ${textColor}`}>
               {plan}
             </h1>
-          </div>
+          </div> */}
 
           <p className="text-slate-400 text-xs">{slogan}</p>
         </div>
 
-        <div>
-          <h1 className="text-xs text-slate-500 text-end">
-            Quality <br /> Score
-          </h1>
-        </div>
+        <QualityBadge quality={qualityScore} />
       </div>
 
       <div className="flex items-start justify-between pt-3">
@@ -59,10 +58,6 @@ const QualityLevelCard = ({
             </li>
           ))}
         </ul>
-
-        <div>
-          <h1 className="text-white font-bold">{qualityScore}</h1>
-        </div>
       </div>
     </div>
   );
