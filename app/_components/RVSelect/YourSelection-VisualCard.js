@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Check, GaugeCircle, Ruler, Users } from "lucide-react";
 import TierBadge from "@/_ui/TierBadge";
 import QualityBadge from "@/_ui/QualityBadge";
