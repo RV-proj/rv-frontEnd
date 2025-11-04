@@ -21,8 +21,6 @@ const QualityLevel = () => {
     dispatch(setSelectedQuality(key));
   };
 
-  console.log(selectedQuality);
-
   return (
     <section className="bg-slate-950/60 pt-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 ">
