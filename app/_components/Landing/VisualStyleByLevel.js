@@ -1,6 +1,15 @@
+import { tiers } from "@/_lists/tiers";
 import VisualStyleByLevelCard from "@/_ui/VisualStyleByLevelCard";
 
 const VisualStyleByLevel = () => {
+  const qualityLevelCardData = Object.entries(tiers).map(([key, value]) => ({
+    plan: key,
+    backgroundColor: `bg-gradient-to-br ${value.color} opacity-25`,
+    ...value,
+  }));
+
+  console.log(qualityLevelCardData);
+
   // NOTE test json data
   const visualStyleByLevelCardData = [
     {
@@ -54,8 +63,8 @@ const VisualStyleByLevel = () => {
 
           {/* card */}
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {visualStyleByLevelCardData.map((card) => (
-              <VisualStyleByLevelCard key={card.id} {...card} level={card.id} />
+            {qualityLevelCardData.map((card) => (
+              <VisualStyleByLevelCard key={card.id} {...card} />
             ))}
           </div>
         </div>
