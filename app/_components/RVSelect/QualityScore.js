@@ -2,8 +2,6 @@ import { tiers } from "@/_lists/tiers";
 import QualityScoreCard from "@/_ui/QualityScoreCard";
 
 const QualityScore = () => {
-  //   notes
-  // container will contain max-w-7xl px-4 sm:px-6 pt-10
   const qualityLevelCardData = Object.entries(tiers).map(([key, value]) => ({
     plan: key,
     backgroundColor: `bg-gradient-to-br ${value.color} opacity-25`,
@@ -43,6 +41,8 @@ const QualityScore = () => {
     },
   ];
 
+  //   notes
+  // container will contain max-w-7xl px-4 sm:px-6 pt-10
   return (
     <section className="bg-slate-950/60 pt-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 ">
