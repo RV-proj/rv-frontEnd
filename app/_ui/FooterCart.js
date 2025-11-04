@@ -48,7 +48,7 @@ export default function FooterCart() {
           <span className="inline-flex items-center gap-2 rounded-xl px-4 py-3 font-semibold text-slate-100 bg-slate-800 border border-slate-700">
             <ShoppingCart className="w-4 h-4" /> Add to Cart
           </span>
-          <span className="rounded-xl px-6 py-3 font-semibold text-white bg-gradient-to-r from-cyan-500 to-fuchsia-600 shadow-lg">
+          <span className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg">
             Select & Continue
           </span>
         </div>
