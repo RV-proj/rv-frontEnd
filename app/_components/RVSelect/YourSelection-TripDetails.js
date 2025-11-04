@@ -11,7 +11,7 @@ export default function TripDetails() {
       </h3>
       <div className="grid grid-cols-2 gap-4 text-sm">
         <label className="flex flex-col gap-2">
-          <span className="text-slate-300">Nights</span>
+          <span className="text-slate-300">Starting Date</span>
           <input
             type="range"
             min={1}
@@ -26,7 +26,7 @@ export default function TripDetails() {
           </div>
         </label>
         <label className="flex flex-col gap-2">
-          <span className="text-slate-300">Delivery Distance (mi)</span>
+          <span className="text-slate-300">Ending Date</span>
           <input
             type="range"
             min={0}
@@ -36,9 +36,9 @@ export default function TripDetails() {
             onChange={(e) => setDeliveryMiles(parseInt(e.target.value))}
           />
           <div className="flex justify-between text-xs text-slate-500">
-            <span>0</span>
+            <span>1</span>
             <span>{deliveryMiles}</span>
-            <span>200</span>
+            <span>30</span>
           </div>
         </label>
       </div>

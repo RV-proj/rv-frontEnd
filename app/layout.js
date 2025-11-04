@@ -1,6 +1,8 @@
 import "@/globals.css";
 import Header from "@/_ui/Header";
 import Footer from "@/_ui/Footer";
+import FooterCart from "@/_ui/FooterCart";
+import { ReduxProvider } from "./_lib/store/ReduxProvider";
 
 export const metadata = {
   title: "RV",
@@ -11,9 +13,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-[#0a1024]">
-        <Header />
-        {children}
-        <Footer />
+        <ReduxProvider>
+          <Header />
+          {children}
+          <FooterCart />
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

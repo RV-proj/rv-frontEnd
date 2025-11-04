@@ -1,8 +1,10 @@
 "use client";
 
-import QualityLevelCard from "@/_ui/QualityLevelCard";
 import { tiers } from "@/_lists/tiers";
 import { useState } from "react";
+import QualityLevelCard from "@/_ui/QualityLevelCard";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedQuality } from "@/_lib/store/cartSlice";
 
 const QualityLevel = () => {
   const qualityLevelCardData = Object.entries(tiers).map(([key, value]) => ({
@@ -12,9 +14,12 @@ const QualityLevel = () => {
     ...value,
   }));
 
-  const [selectedPlan, setSelectedPlan] = useState(
-    qualityLevelCardData[1].plan
-  );
+  const dispatch = useDispatch();
+  const selectedQuality = useSelector((state) => state.cart.selectedQuality);
+
+  const handleSelect = (key) => {
+    dispatch(setSelectedQuality(key));
+  };
 
   return (
     <section className="bg-slate-950/60 pt-10">
@@ -34,8 +39,8 @@ const QualityLevel = () => {
             <QualityLevelCard
               key={card.plan}
               {...card}
-              isSelected={selectedPlan === card.plan}
-              onClick={() => setSelectedPlan(card.plan)}
+              isSelected={selectedQuality === card.plan}
+              onClick={() => handleSelect(card.plan)}
             />
           ))}
         </div>
