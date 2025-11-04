@@ -13,7 +13,7 @@ function Diamonds({ count }) {
 }
 
 export default function TierBadge({ tierKey }) {
-  const tier = tiers[tierKey] || tiers.Basic; // fallback to Basic if missing
+  const tier = tiers[tierKey] || tiers.Basic;
 
   return (
     <span

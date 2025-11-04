@@ -15,8 +15,11 @@ const cartSlice = createSlice({
     setSelectedSize: (state, action) => {
       state.selectedSize = action.payload;
     },
+    setSelectedQuality: (state, action) => {
+      state.selectedQuality = action.payload;
+    },
   },
 });
 
-export const { setSelectedSize } = cartSlice.actions;
+export const { setSelectedSize, setSelectedQuality } = cartSlice.actions;
 export default cartSlice.reducer;

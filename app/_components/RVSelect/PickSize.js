@@ -13,7 +13,6 @@ const PickSize = () => {
   const handleSelect = (key) => {
     dispatch(setSelectedSize(key));
   };
-  // const [selectedKey, setSelectedKey] = useState(null);
   //   notes
   // container will contain max-w-7xl px-4 sm:px-6 pt-10
   return (

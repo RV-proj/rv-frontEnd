@@ -6,6 +6,7 @@ import TierBadge from "./TierBadge";
 
 export default function FooterCart() {
   const selectedSize = useSelector((state) => state.cart.selectedSize);
+  const selectedQuality = useSelector((state) => state.cart.selectedQuality);
   return (
     <section
       id="footercart"
@@ -18,7 +19,7 @@ export default function FooterCart() {
             <span className="text-slate-200 text-base md:text-xl font-semibold">
               {selectedSize || "None"}
             </span>
-            <TierBadge tierKey="Basic" />
+            <TierBadge tierKey={selectedQuality} />
             <span className="hidden md:inline text-emerald-300 font-medium">
               Save 500 (13%)
             </span>
