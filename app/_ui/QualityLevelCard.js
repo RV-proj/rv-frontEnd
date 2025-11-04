@@ -7,7 +7,7 @@ const QualityLevelCard = ({
   // badgeColor,
   // textColor,
   // level,
-  // plan,
+  plan,
   benefits,
   backgroundColor,
   qualityScore,
