@@ -10,9 +10,9 @@ const QualityLevel = () => {
   const qualityLevelCardData = [
     {
       id: 1,
-      // plan: "basic",
-      // badgeColor: "bg-slate-800 border-slate-600",
-      // textColor: "text-slate-300",
+      plan: "Basic",
+      badgeColor: "bg-slate-800 border-slate-600",
+      textColor: "text-slate-300",
       backgroundColor:
         "bg-gradient-to-br from-slate-600 to-slate-800 opacity-25",
       qualityScore: "73",
