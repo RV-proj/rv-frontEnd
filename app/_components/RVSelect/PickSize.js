@@ -2,11 +2,18 @@
 
 import { sizes } from "@/_lists/sizes";
 import { Gem, Sparkles } from "lucide-react";
-import { useState } from "react";
 import PickSizeCard from "@/_ui/PickSizeCard";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedSize } from "@/_lib/store/cartSlice";
 
 const PickSize = () => {
-  const [selectedKey, setSelectedKey] = useState(null);
+  const dispatch = useDispatch();
+  const selectedKey = useSelector((state) => state.cart.selectedSize);
+
+  const handleSelect = (key) => {
+    dispatch(setSelectedSize(key));
+  };
+  // const [selectedKey, setSelectedKey] = useState(null);
   //   notes
   // container will contain max-w-7xl px-4 sm:px-6 pt-10
   return (
@@ -49,7 +56,7 @@ const PickSize = () => {
                 key={key}
                 {...data}
                 isSelected={selectedKey === key}
-                onClick={() => setSelectedKey(key)}
+                onClick={() => handleSelect(key)}
               />
             ))}
           </div>

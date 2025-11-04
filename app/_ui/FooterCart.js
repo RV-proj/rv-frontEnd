@@ -1,7 +1,11 @@
+"use client";
+
 import { Minus, Plus, ShoppingCart } from "lucide-react";
+import { useSelector } from "react-redux";
 import TierBadge from "./TierBadge";
 
 export default function FooterCart() {
+  const selectedSize = useSelector((state) => state.cart.selectedSize);
   return (
     <section
       id="footercart"
@@ -12,7 +16,7 @@ export default function FooterCart() {
           <div className="text-xs text-slate-400">Selected</div>
           <div className="text-base md:text-lg font-semibold flex flex-wrap items-center gap-2">
             <span className="text-slate-200 text-base md:text-xl font-semibold">
-              Size
+              {selectedSize || "None"}
             </span>
             <TierBadge tierKey="Basic" />
             <span className="hidden md:inline text-emerald-300 font-medium">
