@@ -1,12 +1,7 @@
-import { tiers } from "@/_lists/tiers";
-import { Check, Gem } from "lucide-react";
+import { Check } from "lucide-react";
 import TierBadge from "./TierBadge";
-import QualityBadge from "./QualityBadge";
 
 const QualityLevelCard = ({
-  // badgeColor,
-  // textColor,
-  // level,
   plan,
   benefits,
   backgroundColor,
@@ -25,27 +20,17 @@ const QualityLevelCard = ({
       <div
         className={`${backgroundColor} inset-0 w-full h-full absolute -z-10`}
       ></div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-start justify-between">
         <div className="flex items-center gap-2 w-[70%]">
           {/* badge */}
           <TierBadge tierKey={plan} />
-          {/* <div
-            className={`flex items-center gap-2 px-2 py-1 rounded-full border ${badgeColor}`}
-          >
-            <div className="flex items-center gap-1">
-              {Array.from({ length: level }).map((_, index) => (
-                <Gem key={index} className={`w-4 h-4 ${textColor}`} />
-              ))}
-            </div>
-            <h1 className={` font-normal text-sm capitalize ${textColor}`}>
-              {plan}
-            </h1>
-          </div> */}
 
           <p className="text-slate-400 text-xs">{slogan}</p>
         </div>
 
-        <QualityBadge quality={qualityScore} />
+        <div className="w-[10%]">
+          <h1 className="text-[10px] text-slate-500 text-end">Quality Score</h1>
+        </div>
       </div>
 
       <div className="flex items-start justify-between pt-3">
@@ -59,6 +44,7 @@ const QualityLevelCard = ({
             </li>
           ))}
         </ul>
+        <h1 className="text-white font-bold">{qualityScore}</h1>
       </div>
     </div>
   );
