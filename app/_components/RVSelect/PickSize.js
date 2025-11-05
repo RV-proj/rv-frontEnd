@@ -2,9 +2,9 @@
 
 import { sizes } from "@/_lists/sizes";
 import { Gem, Sparkles } from "lucide-react";
-import PickSizeCard from "@/_ui/PickSizeCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedSize } from "@/_lib/store/cartSlice";
+import PickSizeCard from "@/_ui/PickSizeCard";
 
 const PickSize = () => {
   const dispatch = useDispatch();

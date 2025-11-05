@@ -13,9 +13,7 @@ export default function VisualCard() {
   const selectedQuality = useSelector((state) => state.cart.selectedQuality);
 
   const size = sizes[selectedSize];
-  console.log(size);
   const quality = tiers[selectedQuality];
-  console.log(quality);
 
   return (
     <div className="rounded-3xl overflow-hidden border border-slate-700 bg-slate-900">

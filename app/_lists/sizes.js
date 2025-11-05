@@ -46,7 +46,7 @@ export const sizes = {
     benefits: [
       "Bigger groups & comfort features",
       "Spacious living area",
-      "Slide‑outs &amp; full galley",
+      "Slide‑outs full galley",
       "Ideal for week+ trips",
     ],
     img: "https://images.unsplash.com/photo-1714044763161-12910756c633?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
@@ -60,7 +60,7 @@ export const sizes = {
       "Premium amenities",
       "Residential feel",
       "Multiple sleeping zones",
-      "Perfect for long stays &amp; groups",
+      "Perfect for long stays groups",
     ],
     img: "https://images.unsplash.com/photo-1652953826135-5b3f50906d85?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627",
   },
