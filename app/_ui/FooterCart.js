@@ -7,6 +7,9 @@ import TierBadge from "./TierBadge";
 export default function FooterCart() {
   const selectedSize = useSelector((state) => state.cart.selectedSize);
   const selectedQuality = useSelector((state) => state.cart.selectedQuality);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const saving = useSelector((state) => state.cart.saving);
+  const savingPercentage = useSelector((state) => state.cart.savingPercentage);
   return (
     <section
       id="footercart"
@@ -21,7 +24,7 @@ export default function FooterCart() {
             </span>
             <TierBadge tierKey={selectedQuality} />
             <span className="hidden md:inline text-emerald-300 font-medium">
-              Save 500 (13%)
+              Save ${saving} ({savingPercentage}%)
             </span>
           </div>
         </div>
@@ -47,7 +50,7 @@ export default function FooterCart() {
           <div className="text-right">
             <div className="text-xs text-slate-400">Est. Total (xqty)</div>
             <div className="text-xl font-bold text-white tabular-nums">
-              Total Price
+              ${Math.round(totalPrice)}
             </div>
           </div>
           <span className="inline-flex items-center gap-2 rounded-xl px-4 py-3 font-semibold text-slate-100 bg-slate-800 border border-slate-700">
