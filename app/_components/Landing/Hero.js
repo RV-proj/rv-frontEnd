@@ -23,7 +23,7 @@ export default function Hero() {
           <p className="mt-4 max-w-xl text-pretty text-white/75">
             Pick a size. Tell us your dates and location. Our Flex+ network
             races to accept your trip— giving you a same-type or higher RV at a
-            competitive rate, with pro delivery & setup.
+            competitive rate, with professional delivery & setup.
           </p>
           <ul className="mt-6 flex flex-wrap items-center gap-3 text-[13px] text-white/80">
             <li className="inline-flex items-center gap-1">
@@ -47,10 +47,10 @@ export default function Hero() {
               Flex+ Guarantee
             </Pill>
             <Pill icon={<Clock className="h-4 w-4 text-cyan-300" />}>
-              Fast confirmations
+              Instant confirmations
             </Pill>
             <Pill icon={<Star className="h-4 w-4 text-cyan-300" />}>
-              Top-rated owners
+              Top-rated RVs
             </Pill>
           </div>
         </div>

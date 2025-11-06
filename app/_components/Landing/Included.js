@@ -27,7 +27,7 @@ export default function Included() {
             size="lg"
             icon={<CheckCircle2 className="text-cyan-400 h-5 w-5" />}
           >
-            Hotel-level cleaning
+            High-grade cleaning
           </Pill>
           <Pill
             size="lg"
@@ -39,7 +39,7 @@ export default function Included() {
             size="lg"
             icon={<CheckCircle2 className="text-cyan-400 h-5 w-5" />}
           >
-            Inside & outside kitchens
+            Stocked bathroom & kitchen
           </Pill>
           <Pill
             size="lg"

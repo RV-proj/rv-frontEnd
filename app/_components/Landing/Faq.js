@@ -12,7 +12,7 @@ const Faq = () => {
       id: 1,
       question: "What is RVEEDOM Flex+?",
       answer:
-        "Flex+ is our premium matching service. You pick the RV type and dates, and we instantly notify top-rated local owners. The first qualified owner to accept wins the job—meaning you get a same-type or higher upgrade at a competitive Flex+ rate with pro delivery, setup and support included.",
+        "Flex+ is our premium matching service. You pick the RV type and dates, and we instantly notify top-rated local owners. The first qualified owner to accept wins the job—meaning you get a same-type or higher upgrade at a competitive Flex+ rate with professional delivery, setup and support included.",
     },
     {
       id: 2,
