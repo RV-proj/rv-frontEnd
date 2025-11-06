@@ -13,7 +13,7 @@ const links = [
   // { href: "#", label: "Experiences" },
   { href: "#", label: "How it Works" },
   { href: "#", label: "RV Selector" },
-  { href: "/rvTypes", label: "RV Types" },
+  // { href: "/rvTypes", label: "RV Types" },
 ];
 
 export default function Header() {
