@@ -11,6 +11,8 @@ import QualityBadge from "@/_ui/QualityBadge";
 export default function VisualCard() {
   const selectedSize = useSelector((state) => state.cart.selectedSize);
   const selectedQuality = useSelector((state) => state.cart.selectedQuality);
+  const qualityScore = useSelector((state) => state.cart.qualityScore);
+  const flexPrice = useSelector((state) => state.cart.flexPrice);
 
   const size = sizes[selectedSize];
   const quality = tiers[selectedQuality];
@@ -32,12 +34,14 @@ export default function VisualCard() {
             <div className="text-xs opacity-80">Rig Type: {size.rig}</div>
             <div className="flex items-center gap-2 mt-1">
               <TierBadge tierKey={selectedQuality} />
-              <QualityBadge quality={33} />
+              <QualityBadge quality={qualityScore} />
             </div>
           </div>
           <div className="text-white/90 text-right hidden md:block">
             <div className="text-xs">Est. nightly</div>
-            <div className="text-2xl font-semibold tabular-nums">$125</div>
+            <div className="text-2xl font-semibold tabular-nums">
+              ${flexPrice}
+            </div>
           </div>
         </div>
       </div>

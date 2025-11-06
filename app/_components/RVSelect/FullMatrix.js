@@ -5,12 +5,14 @@ import { tiers } from "@/_lists/tiers";
 import { sizes } from "@/_lists/sizes";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedQuality, setSelectedSize } from "@/_lib/store/cartSlice";
+import { getPrice } from "@/_lib/getPrice";
 
 export default function FullMatrix() {
   const dispatch = useDispatch();
   const selectedSize = useSelector((state) => state.cart.selectedSize);
   const selectedQuality = useSelector((state) => state.cart.selectedQuality);
-  console.log(selectedSize, selectedQuality);
+  const cleaningPrepFee = useSelector((state) => state.cart.cleaningPrepFee);
+  const tax = useSelector((state) => state.cart.tax);
 
   const handleSelect = (sKey, tKey) => {
     dispatch(setSelectedQuality(tKey));
@@ -20,7 +22,7 @@ export default function FullMatrix() {
   return (
     <section
       id="fullmatrix"
-      className="container mx-auto max-w-7xl px-4 sm:px-6 text-white mt-10 space-y-5"
+      className="container mx-auto max-w-7xl px-4 sm:px-6 text-white mt-10 space-y-5 mb-10"
     >
       <div>
         <h2 className="text-2xl font-semibold tracking-tight">
@@ -59,6 +61,7 @@ export default function FullMatrix() {
                 {Object.entries(tiers).map(([tKey]) => {
                   const isActive =
                     selectedSize === sKey && selectedQuality === tKey;
+                  const { flexPrice, marketPrice } = getPrice(sKey, tKey);
 
                   return (
                     <td key={tKey} className="p-3 align-top">
@@ -71,14 +74,14 @@ export default function FullMatrix() {
                         }`}
                       >
                         <div className="font-medium tabular-nums">
-                          $price / night
+                          ${flexPrice} / night
                         </div>
                         <div className="text-[11px] text-slate-400">
-                          Setup FEE • Cleaning Fee • Service 9%
+                          Setup + Cleaning Fee: ${cleaningPrepFee} • Tax: {tax}%
                         </div>
 
                         <div className="mt-1 text-[11px] text-emerald-300">
-                          Save perNightSave/night with Flex+
+                          Save ${marketPrice - flexPrice}/night with Flex+
                         </div>
                       </button>
                     </td>
