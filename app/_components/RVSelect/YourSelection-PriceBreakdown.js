@@ -15,6 +15,7 @@ export default function PriceBreakdown() {
   const cleaningPrepFee = useSelector((state) => state.cart.cleaningPrepFee);
   const tax = useSelector((state) => state.cart.tax);
   const taxAmount = useSelector((state) => state.cart.taxAmount);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   const rows = [
     { label: `Nightly x $10`, value: 55, Icon: StarIcon },
@@ -48,7 +49,7 @@ export default function PriceBreakdown() {
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-cyan-400" /> Estimated Total
           </div>
-          <div className="tabular-nums">${Math.round(123.56)}</div>
+          <div className="tabular-nums">${Math.round(totalPrice)}</div>
         </div>
         <p className="text-xs text-slate-400">
           Displayed pricing is an estimate within the RVEEDOM Flex+ program.
