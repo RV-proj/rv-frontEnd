@@ -42,7 +42,8 @@ export default function Hero() {
           </ul>
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <BookFlexButton />
-            <SeeHowItWorks />
+            {/* see how it works */}
+            {/* <SeeHowItWorks /> */}
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-white/60">
             <Pill icon={<ShieldCheck className="h-4 w-4 text-cyan-300" />}>
