@@ -12,7 +12,7 @@ const links = [
   // { href: "#", label: "Destinations" },
   // { href: "#", label: "Experiences" },
   { href: "#", label: "How it Works" },
-  { href: "#", label: "RV Selector" },
+  { href: "/rvSelector", label: "RV Selector" },
   // { href: "/rvTypes", label: "RV Types" },
 ];
 
