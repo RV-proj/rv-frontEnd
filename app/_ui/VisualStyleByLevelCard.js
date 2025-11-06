@@ -11,7 +11,7 @@ const VisualStyleByLevelCard = ({ img, tag, note, label, plan }) => {
           alt="RVEEDOM Flex+"
           width={200}
           height={200}
-          className="h-auto w-full object-cover"
+          className="h-[300px] w-full object-cover"
         />
         <div className={`absolute inset-0 opacity-25 ${tag} `}></div>
       </div>
