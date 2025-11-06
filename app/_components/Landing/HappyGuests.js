@@ -1,7 +1,6 @@
 //   notes
 
 import Card from "@/_ui/Card";
-import { Star } from "lucide-react";
 
 // container will contain max-w-7xl px-4 sm:px-6 pt-10
 const HappyGuests = () => {
@@ -9,21 +8,18 @@ const HappyGuests = () => {
   const happyGuestsCardData = [
     {
       id: 1,
-      icon: <Star />,
       review:
         "Picked 'Large' for our Derby weekend and got a spotless XL with bunk room. Setup was flawless and support answered at 11pm when we had a power question.",
       userName: "Danielle R.",
     },
     {
       id: 2,
-      icon: <Star />,
       review:
         "Corporate tailgate. Flex+ found a perfect match in 2 hours. Price was under what we budgeted and the team handled every detail.",
       userName: "Michael S.",
     },
     {
       id: 3,
-      icon: <Star />,
       review:
         "Insurance rental during home repairs. Delivery every month, extensions were easy. Truly grateful for the comfort and service.",
       userName: "The Nguyen Family",
