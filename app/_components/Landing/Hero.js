@@ -1,6 +1,7 @@
 import { CheckCircle2, Clock, ShieldCheck, Star, Trophy } from "lucide-react";
 import BookFlexButton from "@/_ui/BookFlexButton";
 import Pill from "@/_ui/Pill";
+import SeeHowItWorks from "@/_ui/SeeHowItWorks";
 
 export default function Hero() {
   return (
@@ -41,6 +42,7 @@ export default function Hero() {
           </ul>
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <BookFlexButton />
+            <SeeHowItWorks />
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-white/60">
             <Pill icon={<ShieldCheck className="h-4 w-4 text-cyan-300" />}>
