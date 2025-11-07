@@ -1,15 +1,32 @@
 "use client";
 
-import { Minus, Plus, ShoppingCart } from "lucide-react";
-import { useSelector } from "react-redux";
-import TierBadge from "./TierBadge";
+import { useDispatch, useSelector } from "react-redux";
+import { Minus, Plus } from "lucide-react";
+import { setQuantity } from "@/_lib/store/cartSlice";
+import { useState } from "react";
+import TierBadge from "../../_ui/TierBadge";
+import Confirmation from "./Confirmation";
 
 export default function FooterCart() {
-  const selectedSize = useSelector((state) => state.cart.selectedSize);
-  const selectedQuality = useSelector((state) => state.cart.selectedQuality);
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
-  const saving = useSelector((state) => state.cart.saving);
-  const savingPercentage = useSelector((state) => state.cart.savingPercentage);
+  const [open, setOpen] = useState(false);
+
+  const dispatch = useDispatch();
+  const {
+    selectedSize,
+    selectedQuality,
+    totalPrice,
+    saving,
+    savingPercentage,
+    quantity,
+  } = useSelector((state) => state.cart);
+
+  const handleIncrease = () => {
+    dispatch(setQuantity(quantity + 1));
+  };
+
+  const handleDecrease = () => {
+    dispatch(setQuantity(Math.max(1, quantity - 1)));
+  };
   return (
     <section
       id="footercart"
@@ -30,37 +47,44 @@ export default function FooterCart() {
         </div>
         <div className="flex items-center gap-3">
           <div className="hidden sm:flex items-center gap-1 border rounded-lg px-2 py-1 bg-slate-800 border-slate-700">
-            <span className="text-[11px] text-slate-400 mr-1">Qty</span>
+            {/* <span className="text-[11px] text-slate-400 mr-1"></span> */}
             <button
               aria-label="Decrease"
-              //   onClick={() => setQty((q) => Math.max(1, q - 1))}
+              onClick={handleDecrease}
               className="p-1 rounded hover:bg-slate-700"
             >
               <Minus className="w-4 h-4" />
             </button>
-            <div className="w-8 text-center tabular-nums text-sm">5</div>
+            <div className="w-8 text-center tabular-nums text-sm">
+              {quantity}
+            </div>
             <button
               aria-label="Increase"
-              //   onClick={() => setQty((q) => q + 1)}
+              onClick={handleIncrease}
               className="p-1 rounded hover:bg-slate-700"
             >
               <Plus className="w-4 h-4" />
             </button>
           </div>
           <div className="text-right">
-            <div className="text-xs text-slate-400">Est. Total (xqty)</div>
+            <div className="text-xs text-slate-400">
+              Est. Total (x{quantity})
+            </div>
             <div className="text-xl font-bold text-white tabular-nums">
               ${Math.round(totalPrice)}
             </div>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-xl px-4 py-3 font-semibold text-slate-100 bg-slate-800 border border-slate-700">
-            <ShoppingCart className="w-4 h-4" /> Add to Cart
-          </span>
-          <span className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg">
+          <span
+            onClick={() => {
+              setOpen(true);
+            }}
+            className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
+          >
             Select & Continue
           </span>
         </div>
       </div>
+      {open && <Confirmation open={open} onClose={() => setOpen(false)} />}
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import {
   BadgePercentIcon,
+  Calculator,
   ShieldIcon,
   Sparkles,
   StarIcon,
@@ -16,12 +17,20 @@ export default function PriceBreakdown() {
   const tax = useSelector((state) => state.cart.tax);
   const taxAmount = useSelector((state) => state.cart.taxAmount);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const flexPrice = useSelector((state) => state.cart.flexPrice);
+  const totalDate = useSelector((state) => state.cart.totalDate);
+  const quantity = useSelector((state) => state.cart.quantity);
 
   const rows = [
-    { label: `Nightly x $10`, value: 55, Icon: StarIcon },
+    {
+      label: `Nightly x $${flexPrice}`,
+      value: `${flexPrice * totalDate}`,
+      Icon: StarIcon,
+    },
     { label: "Delivery (optional)", value: 56, Icon: TruckIcon },
     { label: "Setup + Cleaning", value: cleaningPrepFee, Icon: ShieldIcon },
     { label: `Tax(${tax}%)`, value: taxAmount, Icon: BadgePercentIcon },
+    { label: `Quantity`, value: quantity, Icon: Calculator },
   ];
   return (
     <div className="rounded-2xl border border-slate-700 p-4 bg-slate-900">
@@ -41,7 +50,11 @@ export default function PriceBreakdown() {
             <div className="flex items-center gap-2">
               <r.Icon className="w-4 h-4 text-slate-400" /> {r.label}
             </div>
-            <div className="tabular-nums">${Math.round(r.value)}</div>
+            <div className="tabular-nums">
+              {r.label === "Quantity"
+                ? `x${Math.round(r.value)}`
+                : `$${Math.round(r.value)}`}
+            </div>
           </div>
         ))}
         <div className="border-t border-slate-700 my-2" />
