@@ -17,8 +17,8 @@ export default function Why() {
           </h2>
           <p className="mx-auto mt-3 max-w-3xl text-balance text-white/70">
             Flex+ turns the rental marketplace into your advantage—owners
-            compete to win your trip, and you enjoy pro delivery, great value,
-            and upgrade potential.
+            compete to win your trip, and you enjoy professional delivery, great
+            value, and upgrade potential.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export default function Why() {
           />
           <Card
             icon={<Zap className="h-5 w-5" />}
-            title="Fast confirmations"
+            title="Instant confirmations"
             text="Most requests confirm within hours. Real humans oversee every detail 24/7."
           />
         </div>

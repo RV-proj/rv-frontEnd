@@ -9,9 +9,11 @@ import CallButton from "./CallButton";
 
 const links = [
   { href: "#", label: "Why Flex+" },
-  { href: "#", label: "Destinations" },
-  { href: "#", label: "Experiences" },
-  { href: "/rvTypes", label: "RV Types" },
+  // { href: "#", label: "Destinations" },
+  // { href: "#", label: "Experiences" },
+  { href: "#", label: "How it Works" },
+  { href: "/rvSelector", label: "RV Selector" },
+  // { href: "/rvTypes", label: "RV Types" },
 ];
 
 export default function Header() {
