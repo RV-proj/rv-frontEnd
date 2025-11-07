@@ -1,18 +1,24 @@
 "use client";
 
-import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import TierBadge from "./TierBadge";
+import { Minus, Plus } from "lucide-react";
 import { setQuantity } from "@/_lib/store/cartSlice";
+import { useState } from "react";
+import TierBadge from "../../_ui/TierBadge";
+import Confirmation from "./Confirmation";
 
 export default function FooterCart() {
+  const [open, setOpen] = useState(false);
+
   const dispatch = useDispatch();
-  const selectedSize = useSelector((state) => state.cart.selectedSize);
-  const selectedQuality = useSelector((state) => state.cart.selectedQuality);
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
-  const saving = useSelector((state) => state.cart.saving);
-  const savingPercentage = useSelector((state) => state.cart.savingPercentage);
-  const quantity = useSelector((state) => state.cart.quantity);
+  const {
+    selectedSize,
+    selectedQuality,
+    totalPrice,
+    saving,
+    savingPercentage,
+    quantity,
+  } = useSelector((state) => state.cart);
 
   const handleIncrease = () => {
     dispatch(setQuantity(quantity + 1));
@@ -61,19 +67,24 @@ export default function FooterCart() {
             </button>
           </div>
           <div className="text-right">
-            <div className="text-xs text-slate-400">Est. Total (xqty)</div>
+            <div className="text-xs text-slate-400">
+              Est. Total (x{quantity})
+            </div>
             <div className="text-xl font-bold text-white tabular-nums">
               ${Math.round(totalPrice)}
             </div>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-xl px-4 py-3 font-semibold text-slate-100 bg-slate-800 border border-slate-700">
-            <ShoppingCart className="w-4 h-4" /> Add to Cart
-          </span>
-          <span className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg">
+          <span
+            onClick={() => {
+              setOpen(true);
+            }}
+            className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
+          >
             Select & Continue
           </span>
         </div>
       </div>
+      {open && <Confirmation open={open} onClose={() => setOpen(false)} />}
     </section>
   );
 }
