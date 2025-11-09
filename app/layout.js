@@ -1,7 +1,4 @@
 import "@/globals.css";
-import Header from "@/_ui/Header";
-import Footer from "@/_ui/Footer";
-import FooterCart from "@/_components/Cart.js/FooterCart";
 import { ReduxProvider } from "./_lib/store/ReduxProvider";
 
 export const metadata = {
