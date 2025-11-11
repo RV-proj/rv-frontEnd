@@ -1,7 +1,7 @@
 import React from "react";
 
 const PendingOrder = () => {
-  return <div></div>;
+  return <div>meo</div>;
 };
 
 export default PendingOrder;
