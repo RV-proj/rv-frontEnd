@@ -36,15 +36,18 @@ const DropDown = ({ item, signOut }) => {
                   </div>
                 );
               })}
-          <button
-            className="text-black/70 hover:text-white font-bold py-2 mt-3 bg-sky-300 hover:bg-red-300 cursor-pointer transition-all duration-300 w-full rounded-lg"
-            onClick={signOut}
-          >
-            <div className="flex gap-1 justify-center items-center">
-              <LogOut />
-              <h1>Sign Out</h1>
-            </div>
-          </button>
+
+          {signOut && (
+            <button
+              className="text-black/70 hover:text-white font-bold py-2 mt-3 bg-sky-300 hover:bg-red-300 cursor-pointer transition-all duration-300 w-full rounded-lg"
+              onClick={signOut}
+            >
+              <div className="flex gap-1 justify-center items-center">
+                <LogOut />
+                <h1>Sign Out</h1>
+              </div>
+            </button>
+          )}
         </div>
       )}
     </div>
