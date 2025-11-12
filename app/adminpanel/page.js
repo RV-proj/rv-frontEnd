@@ -1,11 +1,7 @@
-import AdminPanel from "@/_components/Admin/Adminpanel/AdminPanel";
-
-const page = () => {
+export default function Page() {
   return (
-    <>
-      <AdminPanel />
-    </>
+    <section id="dashboard">
+      <p>Dashboard</p>
+    </section>
   );
-};
-
-export default page;
+}

@@ -1,12 +1,23 @@
-import AdminPanel from "@/_components/Admin/Adminpanel/AdminPanel";
-import Order from "@/_components/Admin/Order/Order";
+"use client";
 
-const page = () => {
+import { getOrders } from "@/_lib/api/getOrders";
+import { SpinnerMini } from "@/_ui/Spinner";
+import Table from "@/_ui/Table";
+import { useQuery } from "@tanstack/react-query";
+
+export default function Page() {
+  const { data, isPending } = useQuery({
+    queryKey: ["orders"],
+    queryFn: getOrders,
+  });
+
+  console.log(data);
+
   return (
-    <AdminPanel>
-      <Order />
-    </AdminPanel>
-  );
-};
+    <section id="all-order">
+      {/* <p>All order table</p> */}
 
-export default page;
+      {isPending ? <SpinnerMini size="md" /> : <Table data={data} />}
+    </section>
+  );
+}

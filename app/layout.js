@@ -1,5 +1,6 @@
 import "@/globals.css";
 import { ReduxProvider } from "./_lib/store/ReduxProvider";
+import QueryProvider from "@/_lib/QueryProvider";
 
 export const metadata = {
   title: "RV",
@@ -10,7 +11,9 @@ export default function Root({ children }) {
   return (
     <html lang="en">
       <body className="bg-[#0a1024]">
-        <ReduxProvider>{children}</ReduxProvider>
+        <QueryProvider>
+          <ReduxProvider>{children}</ReduxProvider>
+        </QueryProvider>
       </body>
     </html>
   );
