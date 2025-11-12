@@ -1,8 +1,7 @@
 import { CheckCircle2, Clock, ShieldCheck, Star, Trophy } from "lucide-react";
+import BookingEstimator from "./Hero-BookingEstimator";
 import BookFlexButton from "@/_ui/BookFlexButton";
 import Pill from "@/_ui/Pill";
-import SeeHowItWorks from "@/_ui/SeeHowItWorks";
-import BookingEstimator from "./Hero-BookingEstimator";
 
 export default function Hero() {
   return (

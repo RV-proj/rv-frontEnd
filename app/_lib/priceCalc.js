@@ -12,5 +12,7 @@ export function priceCalc(state) {
 
   state.totalPrice = baseTotal * state.quantity * state.totalDate;
   state.saving = marketPrice - flexPrice;
-  state.savingPercentage = ((state.saving / marketPrice) * 100).toFixed(2);
+  state.savingPercentage = Math.round(
+    ((state.saving / marketPrice) * 100).toFixed(2)
+  );
 }
