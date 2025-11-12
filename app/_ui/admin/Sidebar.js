@@ -46,7 +46,7 @@ export default function SideNavigation() {
   };
 
   return (
-    <nav className="bg-slate-900 rounded-e-4xl p-5">
+    <nav className="row-span-10 bg-slate-900 rounded-e-4xl p-5">
       <p className="font-semibold text-3xl mb-10">Admin Panel</p>
       <ul className="flex flex-col gap-2 text-lg">
         {navLinks.map((link) => (
