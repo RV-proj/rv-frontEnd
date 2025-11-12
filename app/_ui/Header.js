@@ -6,6 +6,9 @@ import Link from "next/link";
 import Logo from "./Logo";
 import BookFlexButton from "./BookFlexButton";
 import CallButton from "./CallButton";
+import SigninWithGoogle from "@/_components/Auth/SigninWithGoogle";
+import { useUser } from "@/_hooks/useUser";
+import UserProfile from "@/_components/Auth/UserProfile";
 
 const links = [
   { href: "#", label: "Why Flex+" },
@@ -18,6 +21,7 @@ const links = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const user = useUser();
 
   useEffect(() => {
     const handler = () => setOpen(false);
@@ -44,6 +48,7 @@ export default function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <CallButton />
           <BookFlexButton />
+          {user ? <UserProfile user={user} /> : <SigninWithGoogle />}
         </div>
 
         {/* Mobile-view Right Hamburger */}
@@ -79,6 +84,7 @@ export default function Header() {
             <div className="mt-2 grid grid-cols-1 gap-2">
               <CallButton />
               <BookFlexButton />
+              {user ? <UserProfile user={user} /> : <SigninWithGoogle />}
             </div>
           </nav>
         </div>
