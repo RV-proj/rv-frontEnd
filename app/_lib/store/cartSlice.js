@@ -5,6 +5,8 @@ const initialState = {
   selectedSize: "M",
   selectedQuality: "Basic",
   qualityScore: "70-80",
+  startDate: "",
+  endDate: "",
   totalDate: 1,
   quantity: 1,
   totalPrice: 0,
@@ -37,6 +39,12 @@ const cartSlice = createSlice({
       }
       priceCalc(state);
     },
+    setStartDate: (state, action) => {
+      state.startDate = action.payload;
+    },
+    setEndDate: (state, action) => {
+      state.endDate = action.payload;
+    },
     setTotalDate: (state, action) => {
       state.totalDate = action.payload;
       priceCalc(state);
@@ -51,6 +59,8 @@ const cartSlice = createSlice({
 export const {
   setSelectedSize,
   setSelectedQuality,
+  setStartDate,
+  setEndDate,
   setTotalDate,
   setQuantity,
 } = cartSlice.actions;

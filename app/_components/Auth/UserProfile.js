@@ -1,4 +1,4 @@
-import { useSignOut } from "@/_hooks/useSignOut";
+import { useSignOut } from "@/_lib/userSession/useSignOut";
 import DropDown from "@/_ui/DropDown";
 
 const UserProfile = ({ user }) => {

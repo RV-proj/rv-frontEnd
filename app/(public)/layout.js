@@ -1,4 +1,4 @@
-import FooterCart from "@/_components/Cart.js/FooterCart";
+import FooterCart from "@/_components/Cart/FooterCart";
 import Footer from "@/_ui/Footer";
 import Header from "@/_ui/Header";
 

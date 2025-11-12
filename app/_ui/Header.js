@@ -2,21 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
-import Logo from "./Logo";
+import { useUser } from "@/_lib/userSession/useUser";
+import SigninWithGoogle from "@/_components/Auth/SigninWithGoogle";
+import UserProfile from "@/_components/Auth/UserProfile";
 import BookFlexButton from "./BookFlexButton";
 import CallButton from "./CallButton";
-import SigninWithGoogle from "@/_components/Auth/SigninWithGoogle";
-import { useUser } from "@/_hooks/useUser";
-import UserProfile from "@/_components/Auth/UserProfile";
+import Link from "next/link";
+import Logo from "./Logo";
 
 const links = [
   { href: "#", label: "Why Flex+" },
-  // { href: "#", label: "Destinations" },
-  // { href: "#", label: "Experiences" },
   { href: "#", label: "How it Works" },
   { href: "/rvSelector", label: "RV Selector" },
-  // { href: "/rvTypes", label: "RV Types" },
 ];
 
 export default function Header() {
