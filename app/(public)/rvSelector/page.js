@@ -8,14 +8,14 @@ import PickSize from "@/_components/RVSelect/PickSize";
 import QualityLevel from "@/_components/RVSelect/QualityLevel";
 import QualityScore from "@/_components/RVSelect/QualityScore";
 import YourSelection from "@/_components/RVSelect/YourSelection";
+import ListViewCard from "@/_ui/ListViewCard";
 
 export default function Page() {
-  const [view, setView] = useState("basic"); // default view
+  const [view, setView] = useState("basic");
 
   return (
     <section className="bg-[#020618] min-h-screen overflow-hidden">
       <div className="pt-10 container mx-auto max-w-7xl px-4 sm:px-6 flex flex-col gap-8">
-        {/* header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Sparkles className="h-10 w-10 text-cyan-300" />
@@ -27,7 +27,6 @@ export default function Page() {
           <RVSelectNav handleProjectShow={setView} activeView={view} />
         </div>
 
-        {/* view switcher */}
         <div className="transition-all duration-500 ease-in-out">
           {view === "basic" && (
             <div className="animate-fadeIn space-y-6">
@@ -44,12 +43,13 @@ export default function Page() {
 
           {view === "list" && (
             <div className="animate-fadeIn text-white text-lg p-6">
-              List View
+              <ListViewCard />
+              <ListViewCard />
+              <ListViewCard />
             </div>
           )}
         </div>
 
-        {/* bottom section */}
         <QualityScore />
         <YourSelection />
       </div>
