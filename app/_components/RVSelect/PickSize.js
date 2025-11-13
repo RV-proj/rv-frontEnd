@@ -1,9 +1,8 @@
 "use client";
 
-import { sizes } from "@/_lists/sizes";
-import { Gem, Sparkles } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedSize } from "@/_lib/store/cartSlice";
+import { sizes } from "@/_lists/sizes";
 import PickSizeCard from "@/_ui/PickSizeCard";
 
 const PickSize = () => {
@@ -16,25 +15,8 @@ const PickSize = () => {
   //   notes
   // container will contain max-w-7xl px-4 sm:px-6 pt-10
   return (
-    <section className="bg-slate-950/60 pt-10">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 ">
-        {/* Pick A Size */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {/* icon */}
-            <Sparkles className="h-10 w-10  text-cyan-300 " />
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight flex items-center gap-3 text-white">
-              Choose Your RV — Size &amp; Quality
-            </h1>
-          </div>
-
-          {/* Flex+ Program */}
-          <div className="hidden md:flex items-center gap-2 rounded-xl border border-slate-700 px-4 py-2 bg-slate-900 shadow-sm">
-            <Gem className="w-4 h-4 text-cyan-400" />
-            <h1 className="text-sm font-medium text-white">Flex+ Program</h1>
-          </div>
-        </div>
-
+    <section className="bg-slate-950/60 mt-3">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         {/* pick a size */}
         <div className="pt-10">
           {/* text */}
