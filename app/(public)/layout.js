@@ -8,7 +8,7 @@ const publicLayout = ({ children }) => {
       <Header />
       {children}
       <FooterCart />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
