@@ -11,8 +11,6 @@ export default function Page() {
     queryFn: getOrders,
   });
 
-  console.log(data);
-
   return (
     <section id="all-order">
       {/* <p>All order table</p> */}
