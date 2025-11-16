@@ -29,6 +29,7 @@ const Orders = () => {
     "phone",
     "quality",
     "status",
+    "price",
     "amount_paid",
   ];
   const headerText = {
@@ -36,15 +37,16 @@ const Orders = () => {
     quality: "Quality",
     phone: "Phone",
     deliveryAddress: "Address",
-    amount_paid: "Total",
+    amount_paid: "Paid Amount",
+    price: "Price",
     status: "Status",
   };
 
   return (
-    <section className="bg-slate-950/60 py-5">
+    <section className="bg-slate-950/60 py-5 h-screen">
       <div className="container mx-auto  max-w-7xl px-4 sm:px-6">
         {/* text */}
-        <h1 className="text-white font-bold text-2xl capitalize">My order</h1>
+        <h1 className="text-white font-bold text-2xl capitalize">My orders</h1>
 
         <div className="grid grid-cols-2 gap-5">
           {/* profile data */}
