@@ -9,6 +9,7 @@ import BookFlexButton from "./BookFlexButton";
 import CallButton from "./CallButton";
 import Link from "next/link";
 import Logo from "./Logo";
+import { useCreateUser } from "@/_lib/api/createUser";
 
 const links = [
   { href: "#", label: "Why Flex+" },
@@ -17,8 +18,23 @@ const links = [
 ];
 
 export default function Header() {
+  const { mutate, isLoading } = useCreateUser();
   const [open, setOpen] = useState(false);
   const user = useUser();
+
+  useEffect(() => {
+    if (user) {
+      const userData = {
+        email: user.email,
+        userName:
+          user.user_metadata?.userName ||
+          user.user_metadata?.full_name ||
+          "Unknown",
+      };
+
+      mutate(userData);
+    }
+  }, [user, mutate]);
 
   useEffect(() => {
     const handler = () => setOpen(false);
