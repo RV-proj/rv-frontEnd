@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { LogOut } from "lucide-react";
+import Link from "next/link";
 
 const DropDown = ({ item, signOut }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const profileData = item?.user_metadata;
-
-  console.log(profileData);
 
   return (
     <div className="relative">
@@ -37,6 +36,19 @@ const DropDown = ({ item, signOut }) => {
                 );
               })}
 
+          {/* divider */}
+          {profileData && <div className="bg-white/40 pt-[0.5px] my-2"></div>}
+
+          {/* order */}
+          {profileData && (
+            <Link href="/order">
+              <button className=" rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-md font-semibold text-white/80 hover:bg-white/10 w-full transition-all duration-300 cursor-pointer">
+                <h1 className="text-white">Your Orders</h1>
+              </button>
+            </Link>
+          )}
+
+          {/* sign out */}
           {signOut && (
             <button
               className="text-black/70 hover:text-white font-bold py-2 mt-3 bg-sky-300 hover:bg-red-300 cursor-pointer transition-all duration-300 w-full rounded-lg"
