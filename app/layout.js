@@ -17,6 +17,7 @@ export default function Root({ children }) {
         </QueryProvider>
         {/* toast container */}
         <ToastContainer
+          className="z-999"
           position="top-center"
           autoClose={5000}
           hideProgressBar={false}

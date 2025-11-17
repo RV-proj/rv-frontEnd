@@ -5,6 +5,7 @@ import Input from "@/_ui/Input";
 import TierBadge from "@/_ui/TierBadge";
 import QualityBadge from "@/_ui/QualityBadge";
 import Toast from "@/_ui/Toast";
+import { toast } from "react-toastify";
 
 export default function Confirmation({ open, onClose }) {
   const {
@@ -47,23 +48,27 @@ export default function Confirmation({ open, onClose }) {
       }
 
       const data = await res.json();
+      // toast success
+      toast.success("Order confirmed successfully! 🎉");
       console.log("Order created successfully:", data);
     } catch (err) {
       console.error("Error creating order:", err.message);
+      // toast err
+      toast.error("Failed to create order. Please try again.");
     }
   }
 
   const toastData = {
     text: "Confirm",
-    tostContent: "order confirmed",
+    tostContent: "Processing your order...",
     style:
-      "bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer",
+      "bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition",
     clickData: handlePay,
   };
 
   return createPortal(
     <div
-      className="fixed inset-0 z-9999 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fadeIn"
       onClick={onClose}
     >
       <div
@@ -183,21 +188,17 @@ export default function Confirmation({ open, onClose }) {
 
             {/* Buttons */}
             <div className="flex justify-end">
-              {toastData && (
-                <Toast
-                  text={toastData.text}
-                  tostContent={toastData.tostContent}
-                  style={toastData.style}
-                  clickData={toastData.clickData}
-                />
-              )}
-
+              <Toast
+                text={toastData.text}
+                style={toastData.style}
+                clickData={toastData.clickData}
+              />
               {/* <button
                 onClick={handlePay}
                 className="bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition"
               >
                 Confirm
-              </button> */}
+              </button>{" "} */}
             </div>
           </div>
         </div>

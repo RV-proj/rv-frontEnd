@@ -1,11 +1,4 @@
-import { toast } from "react-toastify";
-
-const Toast = ({ text, tostContent, style, clickData }) => {
-  // use clickdata logic
-  if (clickData) {
-    toast.success(tostContent);
-  }
-
+const Toast = ({ text, style, clickData }) => {
   return (
     <>
       {/* button */}
