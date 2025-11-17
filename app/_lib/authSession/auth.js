@@ -27,10 +27,10 @@ const authConfig = {
 
         return true;
       } catch (err) {
-        console.log(err);
         return false;
       }
     },
+    async session({ session, user }) {},
   },
 };
 
