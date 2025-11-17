@@ -23,33 +23,49 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     setSelectedSize: (state, action) => {
+      if (state.selectedSize === action.payload) return; // no useless work
       state.selectedSize = action.payload;
       priceCalc(state);
     },
+
     setSelectedQuality: (state, action) => {
+      if (state.selectedQuality === action.payload) return; // skip useless calc
+
       state.selectedQuality = action.payload;
-      if (state.selectedQuality === "Basic") {
-        state.qualityScore = "70-80";
+
+      switch (action.payload) {
+        case "Basic":
+          state.qualityScore = "70-80";
+          break;
+        case "Standard":
+          state.qualityScore = "80-90";
+          break;
+        case "Premium":
+          state.qualityScore = "90-100";
+          break;
+        default:
+          state.qualityScore = "";
       }
-      if (state.selectedQuality === "Standard") {
-        state.qualityScore = "80-90";
-      }
-      if (state.selectedQuality === "Premium") {
-        state.qualityScore = "90-100";
-      }
+
       priceCalc(state);
     },
+
     setStartDate: (state, action) => {
       state.startDate = action.payload;
     },
+
     setEndDate: (state, action) => {
       state.endDate = action.payload;
     },
+
     setTotalDate: (state, action) => {
+      if (state.totalDate === action.payload) return;
       state.totalDate = action.payload;
       priceCalc(state);
     },
+
     setQuantity: (state, action) => {
+      if (state.quantity === action.payload) return;
       state.quantity = action.payload;
       priceCalc(state);
     },
