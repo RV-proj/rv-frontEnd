@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Input from "@/_ui/Input";
 import TierBadge from "@/_ui/TierBadge";
 import QualityBadge from "@/_ui/QualityBadge";
+import Toast from "@/_ui/Toast";
 
 export default function Confirmation({ open, onClose }) {
   const {
@@ -51,6 +52,14 @@ export default function Confirmation({ open, onClose }) {
       console.error("Error creating order:", err.message);
     }
   }
+
+  const toastData = {
+    text: "Confirm",
+    tostContent: "order confirmed",
+    style:
+      "bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer",
+    clickData: handlePay,
+  };
 
   return createPortal(
     <div
@@ -174,12 +183,21 @@ export default function Confirmation({ open, onClose }) {
 
             {/* Buttons */}
             <div className="flex justify-end">
-              <button
+              {toastData && (
+                <Toast
+                  text={toastData.text}
+                  tostContent={toastData.tostContent}
+                  style={toastData.style}
+                  clickData={toastData.clickData}
+                />
+              )}
+
+              {/* <button
                 onClick={handlePay}
                 className="bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition"
               >
                 Confirm
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

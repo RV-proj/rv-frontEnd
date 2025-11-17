@@ -1,7 +1,7 @@
 import "@/globals.css";
 import { ReduxProvider } from "./_lib/store/ReduxProvider";
 import QueryProvider from "@/_lib/QueryProvider";
-import { ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "RV",
@@ -15,22 +15,21 @@ export default function Root({ children }) {
         <QueryProvider>
           <ReduxProvider>{children}</ReduxProvider>
         </QueryProvider>
+        {/* toast container */}
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          transition={Bounce}
+        />
       </body>
-
-      {/* toast container */}
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        transition={Bounce}
-      />
     </html>
   );
 }

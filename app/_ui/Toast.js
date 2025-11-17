@@ -1,12 +1,17 @@
 import { toast } from "react-toastify";
 
-const Toast = ({ text, tostContent }) => {
-  const notify = () => toast(tostContent);
+const Toast = ({ text, tostContent, style, clickData }) => {
+  // use clickdata logic
+  if (clickData) {
+    toast.success(tostContent);
+  }
 
   return (
     <>
       {/* button */}
-      <button onClick={notify}>{text}</button>
+      <button className={style} onClick={clickData}>
+        {text}
+      </button>
     </>
   );
 };
