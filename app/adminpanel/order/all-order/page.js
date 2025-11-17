@@ -1,6 +1,6 @@
 "use client";
 
-import { getOrders } from "@/_lib/api/getOrders";
+import { getOrders } from "@/_lib/api/orders";
 import { SpinnerMini } from "@/_ui/Spinner";
 import Table from "@/_ui/Table";
 import { useQuery } from "@tanstack/react-query";

@@ -46,7 +46,7 @@ const QualityScore = () => {
   //   notes
   // container will contain max-w-7xl px-4 sm:px-6 pt-10
   return (
-    <section className="bg-slate-950/60 pt-10">
+    <section className="bg-slate-950/60">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 ">
         {/* Quality Score */}
         <div className="rounded-2xl border border-slate-700 p-4 bg-slate-900">
