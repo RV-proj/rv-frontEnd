@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { useUser } from "@/_lib/userSession/useUser";
-import SigninWithGoogle from "@/_components/Auth/SigninWithGoogle";
 import UserProfile from "@/_components/Auth/UserProfile";
 import BookFlexButton from "./BookFlexButton";
 import CallButton from "./CallButton";
 import Link from "next/link";
 import Logo from "./Logo";
+import SignInWithGoogle from "@/_components/Auth/SigninWithGoogle";
 
 const links = [
   { href: "#", label: "Why Flex+" },
@@ -18,7 +17,7 @@ const links = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const user = useUser();
+  const user = null;
 
   useEffect(() => {
     const handler = () => setOpen(false);
@@ -45,7 +44,7 @@ export default function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <CallButton />
           <BookFlexButton />
-          {user ? <UserProfile user={user} /> : <SigninWithGoogle />}
+          {user ? <UserProfile user={user} /> : <SignInWithGoogle />}
         </div>
 
         {/* Mobile-view Right Hamburger */}
@@ -81,7 +80,7 @@ export default function Header() {
             <div className="mt-2 grid grid-cols-1 gap-2">
               <CallButton />
               <BookFlexButton />
-              {user ? <UserProfile user={user} /> : <SigninWithGoogle />}
+              {user ? <UserProfile user={user} /> : <SignInWithGoogle />}
             </div>
           </nav>
         </div>
