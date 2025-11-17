@@ -1,6 +1,6 @@
 "use client";
 
-import { getOrderByEmail } from "@/_lib/api/getOrderByEmail";
+import { getOrderByEmail } from "@/_lib/api/getOrders";
 import { useUser } from "@/_lib/userSession/useUser";
 import { SpinnerMini } from "@/_ui/Spinner";
 import { useQuery } from "@tanstack/react-query";

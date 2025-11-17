@@ -7,13 +7,16 @@ const SigninWithGoogle = () => {
 
   // google sign in
   const handleGoogleAuth = async () => {
-    const { err } = await supabase.auth.signInWithOAuth({
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
     });
 
-    if (err) {
-      setError(err.message);
+    if (error) {
+      setError(error.message);
+      return;
     }
+
+    console.log(data);
   };
 
   return (
