@@ -6,6 +6,7 @@ import { setQuantity } from "@/_lib/store/cartSlice";
 import { useState } from "react";
 import TierBadge from "../../_ui/TierBadge";
 import Confirmation from "./Confirmation";
+import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 
 export default function FooterCart() {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,8 @@ export default function FooterCart() {
     startDate,
     endDate,
   } = useSelector((state) => state.cart);
-  const isSelected = selectedSize && selectedQuality && startDate && endDate;
+  const isSelected =
+    selectedSize && selectedQuality && tripLengthCalc(startDate, endDate) > 3;
 
   const handleIncrease = () => {
     dispatch(setQuantity(quantity + 1));

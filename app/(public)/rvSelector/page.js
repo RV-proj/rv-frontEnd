@@ -17,7 +17,7 @@ export default function Page() {
   const [view, setView] = useState("basic");
 
   return (
-    <section className="bg-[#020618] min-h-screen overflow-hidden">
+    <section className="bg-[#020618] min-h-screen overflow-hidden pb-10">
       <div className="pt-10 container mx-auto max-w-7xl px-4 sm:px-6 flex flex-col gap-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
