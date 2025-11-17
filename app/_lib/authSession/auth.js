@@ -30,6 +30,7 @@ const authConfig = {
         return false;
       }
     },
+    // Adding user ID to the session
     async session({ session, user }) {},
   },
 };

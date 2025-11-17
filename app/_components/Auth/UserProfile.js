@@ -7,6 +7,7 @@ import Link from "next/link";
 import SignOutButton from "./SignOutButton";
 
 export default function UserProfile({ session }) {
+  console.log(session);
   const [open, setOpen] = useState(false);
 
   return (
