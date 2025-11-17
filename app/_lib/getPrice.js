@@ -5,6 +5,5 @@ export function getPrice(size, tier) {
   const data = prices[key];
 
   if (!data) return;
-  console.log("Price Data: ", data);
   return data;
 }
