@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { priceCalc } from "../priceCalc";
 
 const initialState = {
-  selectedSize: "M",
-  selectedQuality: "Basic",
-  qualityScore: "70-80",
+  selectedSize: "",
+  selectedQuality: "",
+  qualityScore: "",
   startDate: "",
   endDate: "",
-  totalDate: 1,
+  totalDate: null,
   quantity: 1,
   totalPrice: 0,
   flexPrice: 0,

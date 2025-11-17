@@ -18,7 +18,10 @@ export default function FooterCart() {
     saving,
     savingPercentage,
     quantity,
+    startDate,
+    endDate,
   } = useSelector((state) => state.cart);
+  const isSelected = selectedSize && selectedQuality && startDate && endDate;
 
   const handleIncrease = () => {
     dispatch(setQuantity(quantity + 1));
@@ -74,14 +77,16 @@ export default function FooterCart() {
               ${Math.round(totalPrice)}
             </div>
           </div>
-          <span
-            onClick={() => {
-              setOpen(true);
-            }}
-            className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
-          >
-            Select & Continue
-          </span>
+          {isSelected && (
+            <span
+              onClick={() => {
+                setOpen(true);
+              }}
+              className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
+            >
+              Continue to Payment
+            </span>
+          )}
         </div>
       </div>
       {open && <Confirmation open={open} onClose={() => setOpen(false)} />}

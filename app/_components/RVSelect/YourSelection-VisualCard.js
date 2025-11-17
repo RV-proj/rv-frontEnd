@@ -9,10 +9,8 @@ import TierBadge from "@/_ui/TierBadge";
 import QualityBadge from "@/_ui/QualityBadge";
 
 export default function VisualCard() {
-  const selectedSize = useSelector((state) => state.cart.selectedSize);
-  const selectedQuality = useSelector((state) => state.cart.selectedQuality);
-  const qualityScore = useSelector((state) => state.cart.qualityScore);
-  const flexPrice = useSelector((state) => state.cart.flexPrice);
+  const { selectedSize, selectedQuality, qualityScore, flexPrice } =
+    useSelector((state) => state.cart);
 
   const size = sizes[selectedSize];
   const quality = tiers[selectedQuality];

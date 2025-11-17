@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
+import { useSelector } from "react-redux";
 import RVSelectNav from "@/_ui/RvSelectNav";
 import FullMatrix from "@/_components/RVSelect/FullMatrix";
 import PickSize from "@/_components/RVSelect/PickSize";
@@ -11,6 +12,8 @@ import YourSelection from "@/_components/RVSelect/YourSelection";
 import ListViewCard from "@/_ui/ListViewCard";
 
 export default function Page() {
+  const { selectedSize, selectedQuality } = useSelector((state) => state.cart);
+  const isSelected = selectedSize && selectedQuality;
   const [view, setView] = useState("basic");
 
   return (
@@ -50,8 +53,12 @@ export default function Page() {
           )}
         </div>
 
-        <QualityScore />
-        <YourSelection />
+        {isSelected && (
+          <>
+            <QualityScore />
+            <YourSelection />
+          </>
+        )}
       </div>
     </section>
   );
