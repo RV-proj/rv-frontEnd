@@ -18,7 +18,7 @@ export default function StatusBadge({ status }) {
 
   return (
     <span
-      className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-br ${color} border border-white/5`}
+      className={`px-3 py-1 rounded-full text-xs font-medium bg-linear-to-br ${color} border border-white/5`}
     >
       {stat}
     </span>
