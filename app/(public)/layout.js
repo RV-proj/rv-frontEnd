@@ -1,16 +1,16 @@
 import FooterCart from "@/_components/Cart/FooterCart";
+import { auth } from "@/_lib/authSession/auth";
 import Footer from "@/_ui/Footer";
 import Header from "@/_ui/Header";
 
-const publicLayout = ({ children }) => {
+export default async function publicLayout({ children }) {
+  const session = await auth();
   return (
     <>
       <Header />
       {children}
-      <FooterCart />
-      {/* <Footer /> */}
+      {session && <FooterCart />}
+      <Footer />
     </>
   );
-};
-
-export default publicLayout;
+}

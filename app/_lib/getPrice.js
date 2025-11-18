@@ -1,9 +1,8 @@
 import { prices } from "@/_lists/prices";
 
 export function getPrice(size, tier) {
-  const key = `${size}_${tier}`;
-  const data = prices[key];
+  if (!size || !tier) return null;
 
-  if (!data) return;
-  return data;
+  const key = `${size}_${tier}`;
+  return prices[key] || null;
 }

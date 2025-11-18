@@ -1,18 +1,35 @@
 import { getPrice } from "./getPrice";
 
 export function priceCalc(state) {
-  const { flexPrice, marketPrice } = getPrice(
-    state.selectedSize,
-    state.selectedQuality
-  );
+  if (!state.selectedSize || !state.selectedQuality) {
+    resetPrice(state);
+    return;
+  }
+  const data = getPrice(state.selectedSize, state.selectedQuality);
+  if (!data) {
+    resetPrice(state);
+    return;
+  }
+  const { flexPrice, marketPrice } = data;
+
   state.flexPrice = flexPrice;
   state.taxAmount = flexPrice * (state.tax / 100);
 
   const baseTotal = flexPrice + state.taxAmount + state.cleaningPrepFee;
 
-  state.totalPrice = baseTotal * state.quantity * state.totalDate;
+  const days = state.totalDate || 1;
+  const qty = state.quantity || 1;
+
+  state.totalPrice = baseTotal * qty * days;
   state.saving = marketPrice - flexPrice;
-  state.savingPercentage = Math.round(
-    ((state.saving / marketPrice) * 100).toFixed(2)
-  );
+
+  state.savingPercentage = Math.round((state.saving / marketPrice) * 100);
+}
+
+function resetPrice(state) {
+  state.flexPrice = 0;
+  state.taxAmount = 0;
+  state.totalPrice = 0;
+  state.saving = 0;
+  state.savingPercentage = 0;
 }
