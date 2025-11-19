@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import Input from "@/_ui/Input";
 import TierBadge from "@/_ui/TierBadge";
 import QualityBadge from "@/_ui/QualityBadge";
-import Toast from "@/_ui/Toast";
 import { toast } from "react-toastify";
 
 export default function Confirmation({ open, onClose }) {
@@ -22,6 +21,7 @@ export default function Confirmation({ open, onClose }) {
   } = useSelector((state) => state.cart);
   if (!open) return null;
 
+  // payment handler
   async function handlePay() {
     try {
       const res = await fetch("http://localhost:5000/order", {
@@ -30,41 +30,24 @@ export default function Confirmation({ open, onClose }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: "user@example.com",
-          name: "John Doe",
-          phone: "+880123456789",
-          price: totalPrice,
-          startDate: startDate,
-          endDate: endDate,
-          size: selectedSize,
-          quality: selectedQuality,
-          deliveryAddress: "123 Street, Dhaka",
-          quantity: quantity,
+          amount_paid: totalPrice,
         }),
       });
 
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
+      if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
       const data = await res.json();
-      // toast success
-      toast.success("Order confirmed successfully! 🎉");
-      console.log("Order created successfully:", data);
+
+      // save session ID
+      localStorage.setItem("stripe_session_id", data.sessionId);
+
+      // redirect to stripe
+      window.location.href = data.url;
     } catch (err) {
       console.error("Error creating order:", err.message);
-      // toast err
-      toast.error("Failed to create order. Please try again.");
+      toast.error("Failed to create order.");
     }
   }
-
-  const toastData = {
-    text: "Confirm",
-    tostContent: "Processing your order...",
-    style:
-      "bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition",
-    clickData: handlePay,
-  };
 
   return createPortal(
     <div
@@ -104,11 +87,15 @@ export default function Confirmation({ open, onClose }) {
                 label="Email Address"
                 placeholder="something@something.com"
                 name="email"
+                type="email"
+                required
               />
               <Input
                 label="Destination Address"
                 placeholder="123 Main St, Lexington, KY"
                 name="address"
+                type="text"
+                required
               />
 
               <div className="grid grid-cols-2 gap-3">
@@ -188,17 +175,13 @@ export default function Confirmation({ open, onClose }) {
 
             {/* Buttons */}
             <div className="flex justify-end">
-              <Toast
-                text={toastData.text}
-                style={toastData.style}
-                clickData={toastData.clickData}
-              />
-              {/* <button
+              {/* confirm payment */}
+              <button
                 onClick={handlePay}
                 className="bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition"
               >
                 Confirm
-              </button>{" "} */}
+              </button>{" "}
             </div>
           </div>
         </div>
