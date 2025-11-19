@@ -44,15 +44,13 @@ export default function Confirmation({ open, onClose }) {
       localStorage.setItem(
         "order_data",
         JSON.stringify({
-          email: "jakir.khan@example.com",
-          name: "jakir Khan",
-          size: "Small",
-          quality: "Standard",
-          deliveryAddress: "Flat 10B, Sector 11, Badda, Dhaka",
-          price: 1800,
-          startDate: "2025-12-03",
-          endDate: "2025-12-07",
-          quantity: 4,
+          email: "masud.rahman@example.com",
+          size: "Medium",
+          quality: "Premium",
+          price: 2600,
+          startDate: "2026-01-10",
+          endDate: "2026-01-15",
+          quantity: 2,
         })
       );
 
