@@ -41,6 +41,21 @@ export default function Confirmation({ open, onClose }) {
       // save session ID
       localStorage.setItem("stripe_session_id", data.sessionId);
 
+      localStorage.setItem(
+        "order_data",
+        JSON.stringify({
+          email: "jakir.khan@example.com",
+          name: "jakir Khan",
+          size: "Small",
+          quality: "Standard",
+          deliveryAddress: "Flat 10B, Sector 11, Badda, Dhaka",
+          price: 1800,
+          startDate: "2025-12-03",
+          endDate: "2025-12-07",
+          quantity: 4,
+        })
+      );
+
       // redirect to stripe
       window.location.href = data.url;
     } catch (err) {
