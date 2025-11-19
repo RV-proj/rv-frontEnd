@@ -29,7 +29,7 @@ export default function TripDetails() {
     dispatch(setTotalDate(totalDate));
   };
 
-  const minNights = totalDate < 4 && startDate && endDate;
+  const minNights = totalDate < 4;
 
   return (
     <div className="rounded-2xl border border-slate-700 p-4 bg-slate-900">

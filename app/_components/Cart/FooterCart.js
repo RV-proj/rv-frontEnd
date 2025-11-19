@@ -6,6 +6,7 @@ import { setQuantity } from "@/_lib/store/cartSlice";
 import { useState } from "react";
 import TierBadge from "../../_ui/TierBadge";
 import Confirmation from "./Confirmation";
+import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 
 export default function FooterCart() {
   const [open, setOpen] = useState(false);
@@ -18,7 +19,11 @@ export default function FooterCart() {
     saving,
     savingPercentage,
     quantity,
+    startDate,
+    endDate,
   } = useSelector((state) => state.cart);
+  const isSelected =
+    selectedSize && selectedQuality && tripLengthCalc(startDate, endDate) > 3;
 
   const handleIncrease = () => {
     dispatch(setQuantity(quantity + 1));
@@ -74,14 +79,16 @@ export default function FooterCart() {
               ${Math.round(totalPrice)}
             </div>
           </div>
-          <span
-            onClick={() => {
-              setOpen(true);
-            }}
-            className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
-          >
-            Select & Continue
-          </span>
+          {isSelected && (
+            <span
+              onClick={() => {
+                setOpen(true);
+              }}
+              className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
+            >
+              Continue to Payment
+            </span>
+          )}
         </div>
       </div>
       {open && <Confirmation open={open} onClose={() => setOpen(false)} />}
