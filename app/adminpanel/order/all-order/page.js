@@ -1,5 +1,4 @@
 "use client";
-
 import { getOrders } from "@/_lib/api/orders";
 import { SpinnerMini } from "@/_ui/Spinner";
 import { useQuery } from "@tanstack/react-query";

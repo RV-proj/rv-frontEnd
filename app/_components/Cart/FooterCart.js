@@ -1,14 +1,14 @@
 "use client";
 
+import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 import { useDispatch, useSelector } from "react-redux";
-import { Minus, Plus } from "lucide-react";
 import { setQuantity } from "@/_lib/store/cartSlice";
+import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import TierBadge from "../../_ui/TierBadge";
 import Confirmation from "./Confirmation";
-import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 
-export default function FooterCart() {
+export default function FooterCart({ session }) {
   const [open, setOpen] = useState(false);
 
   const dispatch = useDispatch();
@@ -91,7 +91,13 @@ export default function FooterCart() {
           )}
         </div>
       </div>
-      {open && <Confirmation open={open} onClose={() => setOpen(false)} />}
+      {open && (
+        <Confirmation
+          open={open}
+          onClose={() => setOpen(false)}
+          session={session}
+        />
+      )}
     </section>
   );
 }
