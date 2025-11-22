@@ -10,7 +10,6 @@ export default async function publicLayout({ children }) {
       <Header />
       {children}
       {session && <FooterCart session={session} />}
-      <Footer />
     </>
   );
 }
