@@ -17,7 +17,6 @@ export default function Confirmation({ open, onClose }) {
     cleaningPrepFee,
     savingPercentage,
     tax,
-    quantity,
   } = useSelector((state) => state.cart);
   if (!open) return null;
 
@@ -44,13 +43,14 @@ export default function Confirmation({ open, onClose }) {
       localStorage.setItem(
         "order_data",
         JSON.stringify({
-          email: "masud.rahman@example.com",
+          email: "kejvo@woaho.cd",
           size: "Medium",
           quality: "Premium",
           price: 2600,
           startDate: "2026-01-10",
           endDate: "2026-01-15",
           quantity: 2,
+          status: "done",
         })
       );
 
