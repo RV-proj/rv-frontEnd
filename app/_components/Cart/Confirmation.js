@@ -18,7 +18,6 @@ export default function Confirmation({ open, onClose, session }) {
     cleaningPrepFee,
     savingPercentage,
     tax,
-    quantity,
   } = useSelector((state) => state.cart);
   if (!open) return null;
 
@@ -31,16 +30,7 @@ export default function Confirmation({ open, onClose, session }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: email,
-          // name: "John Doe",
-          // phone: "+880123456789",
-          price: totalPrice,
-          startDate: startDate,
-          endDate: endDate,
-          size: selectedSize,
-          quality: selectedQuality,
-          // deliveryAddress: "123 Street, Dhaka",
-          quantity: quantity,
+          amount_paid: totalPrice,
         }),
       });
 
@@ -54,13 +44,14 @@ export default function Confirmation({ open, onClose, session }) {
       localStorage.setItem(
         "order_data",
         JSON.stringify({
-          email: "masud.rahman@example.com",
+          email: email,
           size: "Medium",
           quality: "Premium",
           price: 2600,
           startDate: "2026-01-10",
           endDate: "2026-01-15",
           quantity: 2,
+          status: "done",
         })
       );
 
