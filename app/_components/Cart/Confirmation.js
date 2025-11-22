@@ -30,16 +30,7 @@ export default function Confirmation({ open, onClose, session }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: email,
-          // name: "John Doe",
-          // phone: "+880123456789",
-          price: totalPrice,
-          startDate: startDate,
-          endDate: endDate,
-          size: selectedSize,
-          quality: selectedQuality,
-          // deliveryAddress: "123 Street, Dhaka",
-          quantity: quantity,
+          amount_paid: totalPrice,
         }),
       });
 
