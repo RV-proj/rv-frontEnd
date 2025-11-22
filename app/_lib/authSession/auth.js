@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
+import { getUser } from "../api/users";
 
 const authConfig = {
   providers: [
@@ -29,6 +30,11 @@ const authConfig = {
       } catch (err) {
         return false;
       }
+    },
+    async session({ session, user }) {
+      const guest = await getUser(session.user.email);
+      session.user.userId = guest[0].id;
+      return session;
     },
   },
 };
