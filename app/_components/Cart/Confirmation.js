@@ -22,6 +22,7 @@ export default function Confirmation({ open, onClose, session }) {
   } = useSelector((state) => state.cart);
   if (!open) return null;
 
+  // payment handler
   async function handlePay() {
     try {
       const res = await fetch("http://localhost:5000/order", {
@@ -43,18 +44,31 @@ export default function Confirmation({ open, onClose, session }) {
         }),
       });
 
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
+      if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
       const data = await res.json();
-      // toast success
-      toast.success("Order confirmed successfully! 🎉");
-      console.log("Order created successfully:", data);
+
+      // save session ID
+      localStorage.setItem("stripe_session_id", data.sessionId);
+
+      localStorage.setItem(
+        "order_data",
+        JSON.stringify({
+          email: "masud.rahman@example.com",
+          size: "Medium",
+          quality: "Premium",
+          price: 2600,
+          startDate: "2026-01-10",
+          endDate: "2026-01-15",
+          quantity: 2,
+        })
+      );
+
+      // redirect to stripe
+      window.location.href = data.url;
     } catch (err) {
       console.error("Error creating order:", err.message);
-      // toast err
-      toast.error("Failed to create order. Please try again.");
+      toast.error("Failed to create order.");
     }
   }
 
@@ -179,6 +193,7 @@ export default function Confirmation({ open, onClose, session }) {
             </ol>
 
             <div className="flex justify-end">
+              {/* confirm payment */}
               <button
                 onClick={handlePay}
                 className="bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-2 cursor-pointer rounded-lg shadow-lg hover:opacity-90 transition"
