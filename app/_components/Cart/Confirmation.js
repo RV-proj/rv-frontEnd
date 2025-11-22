@@ -44,7 +44,7 @@ export default function Confirmation({ open, onClose, session }) {
       localStorage.setItem(
         "order_data",
         JSON.stringify({
-          email: "kejvo@woaho.cd",
+          email: email,
           size: "Medium",
           quality: "Premium",
           price: 2600,
