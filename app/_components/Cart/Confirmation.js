@@ -17,6 +17,7 @@ export default function Confirmation({ open, onClose, session }) {
     qualityScore,
     cleaningPrepFee,
     savingPercentage,
+    quantity,
     tax,
   } = useSelector((state) => state.cart);
   if (!open) return null;
@@ -30,8 +31,7 @@ export default function Confirmation({ open, onClose, session }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount_paid: totalPrice,
-          email: email,
+          amount_paid: totalPrice * (5 / 100),
         }),
       });
 
@@ -46,13 +46,12 @@ export default function Confirmation({ open, onClose, session }) {
         "order_data",
         JSON.stringify({
           email: email,
-          size: "Medium",
-          quality: "Premium",
-          price: 2600,
-          startDate: "2026-01-10",
-          endDate: "2026-01-15",
-          quantity: 2,
-          status: "done",
+          size: selectedSize,
+          quality: selectedQuality,
+          price: totalPrice,
+          startDate: startDate,
+          endDate: endDate,
+          quantity: quantity,
         })
       );
 
