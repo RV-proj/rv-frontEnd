@@ -3,33 +3,9 @@ import { getPrice } from "@/_lib/getPrice";
 import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 import StatusBadge from "@/_ui/StatusBadge";
 import TierBadge from "@/_ui/TierBadge";
-import { useEffect } from "react";
-import { toast } from "react-toastify";
+
 
 export default function AllOrderTable({ data }) {
-  useEffect(() => {
-    const sessionId = localStorage.getItem("stripe_session_id");
-    const orderData = JSON.parse(localStorage.getItem("order_data"));
-
-    if (!sessionId || !orderData) return;
-
-    fetch("http://localhost:5000/order/verify", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sessionId, orderData }),
-    })
-      .then((item) => item.json())
-      .then((data) => {
-        if (data) {
-          toast.success("Payment successful!");
-          // cleanup
-          localStorage.removeItem("stripe_session_id");
-          localStorage.removeItem("order_data");
-        }
-      })
-      .catch(() => toast.error("Verification failed"));
-  }, []);
-
   return (
     <div className="relative overflow-x-auto bg-[#0F172A] rounded-xl border border-[#1E293B] shadow">
       <table className="w-full text-sm text-left text-gray-300">
