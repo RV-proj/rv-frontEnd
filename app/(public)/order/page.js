@@ -6,11 +6,10 @@ import { SpinnerMini } from "@/_ui/Spinner";
 export default async function Page() {
   const session = await auth();
   const profileData = session.user;
+  const email = session.user.email;
   const isPending = null;
 
-  const testEmail = "fahimahmed19992965@gmail.com";
-
-  const data = await getOrderByEmail(testEmail);
+  const data = await getOrderByEmail(email);
   const latestOrder = data?.length
     ? [...data].sort(
         (a, b) => new Date(b.created_at) - new Date(a.created_at)

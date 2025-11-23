@@ -22,6 +22,8 @@ export default function Confirmation({ open, onClose, session }) {
   } = useSelector((state) => state.cart);
   if (!open) return null;
 
+  const deposit = totalPrice * 0.05;
+
   // payment handler
   async function handlePay() {
     try {
@@ -31,7 +33,8 @@ export default function Confirmation({ open, onClose, session }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount_paid: totalPrice * (5 / 100),
+          amount_paid: deposit,
+          email: email,
         }),
       });
 
