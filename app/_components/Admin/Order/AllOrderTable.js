@@ -1,9 +1,7 @@
-"use client";
 import { getPrice } from "@/_lib/getPrice";
 import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 import StatusBadge from "@/_ui/StatusBadge";
 import TierBadge from "@/_ui/TierBadge";
-
 
 export default function AllOrderTable({ data }) {
   return (
