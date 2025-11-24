@@ -37,6 +37,9 @@ const authConfig = {
       return session;
     },
   },
+  pages: {
+    signIn: "/",
+  },
 };
 
 export const {

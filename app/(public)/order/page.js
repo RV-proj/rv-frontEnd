@@ -1,70 +1,37 @@
 import { getOrderByEmail } from "@/_lib/api/orders";
-import { auth } from "@/_lib/authSession/auth";
+import { getSessionUser } from "@/_lib/api/users";
 import OrderTable from "@/_ui/OrderTable";
-import { SpinnerMini } from "@/_ui/Spinner";
 
 export default async function Page() {
-  const session = await auth();
-  const profileData = session.user;
-  const email = session.user.email;
-  const isPending = null;
+  const sessionUser = await getSessionUser();
+  const orderData = await getOrderByEmail(sessionUser.email);
 
-  const data = await getOrderByEmail(email);
-  const latestOrder = data?.length
-    ? [...data].sort(
-        (a, b) => new Date(b.created_at) - new Date(a.created_at)
-      )[0]
-    : null;
-
-  console.log(data);
   return (
-    <section id="userOrder" className="bg-slate-950/50 py-5">
+    <section
+      id="userOrder"
+      className="h-[90vh] bg-slate-950/30 py-5 text-white"
+    >
       <div className="container mx-auto px-4 sm:px-6">
-        text
-        <h1 className="text-white font-bold text-2xl capitalize">My order</h1>
         <div className="grid grid-cols-2 gap-5 mb-10">
-          {/* profile data */}
-          <div className="mt-5 bg-slate-800 p-5 rounded-lg">
-            <h1 className="text-gray-300 font-semibold mb-2">
+          <div className="bg-slate-800 p-5 rounded-lg">
+            <h1 className="text-gray-300 text-2xl font-semibold mb-2">
               Personal Profile
             </h1>
-            {profileData &&
-              Object.entries(profileData)
-                .slice(0, 4)
-                .map(([key, value]) => {
-                  if (key === "avatar_url") return null;
-                  return (
-                    <div key={key} className="block text-gray-300 truncate">
-                      {value}
-                    </div>
-                  );
-                })}
+            <p className="">Full Name: {sessionUser.userName}</p>
+            <p>Email: {sessionUser.email}</p>
+            <p>
+              Account Created:{" "}
+              {new Date(sessionUser.created_at).toLocaleString()}
+            </p>
           </div>
 
-          {/* address */}
-          <div className="mt-5 bg-slate-800 p-5 rounded-lg">
-            <h1 className="text-gray-300 font-semibold mb-2">Address Book</h1>
-
-            {isPending ? (
-              <SpinnerMini size="sm" />
-            ) : (
-              latestOrder && (
-                <div key={latestOrder.id} className="text-gray-300">
-                  <div className="flex items-center gap-3">
-                    <h1 className="font-semibold text-gray-400">Phone:</h1>
-                    <h1>{latestOrder.phone}</h1>
-                  </div>
-
-                  {/* <div className="flex items-center gap-3">
-                    <h1 className="font-semibold text-gray-400">Address:</h1>
-                    <h1>{latestOrder.deliveryAddress}</h1>
-                  </div> */}
-                </div>
-              )
-            )}
+          <div className="bg-slate-800 p-5 rounded-lg">
+            <h1 className="text-gray-300 text-2xl font-semibold mb-2">
+              Orders
+            </h1>
           </div>
         </div>
-        <OrderTable data={data} />
+        <OrderTable data={orderData} />
       </div>
     </section>
   );
