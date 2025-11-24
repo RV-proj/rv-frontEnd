@@ -1,7 +1,7 @@
 import { getPrice } from "@/_lib/getPrice";
+import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 import StatusBadge from "./StatusBadge";
 import TierBadge from "./TierBadge";
-import { tripLengthCalc } from "@/_lib/tripLengthCalc";
 
 export default function OrderTable({ data }) {
   return (
