@@ -14,13 +14,11 @@ export default function Page() {
 
   return (
     <section id="all-order">
-      {/* <p>All order table</p> */}
-
       {isPending ? (
         <SpinnerMini size="md" />
       ) : (
         <div className="relative overflow-x-auto bg-[#0F172A] rounded-xl border border-[#1E293B] shadow">
-          <OrderTable data={data} />
+          <OrderTable data={data} isAdmin={true} />
         </div>
       )}
     </section>
