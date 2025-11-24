@@ -6,10 +6,12 @@ import TierBadge from "@/_ui/TierBadge";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 
-export default function AllOrderTable({ data }) {
+const AllOrderTable = ({ data }) => {
   useEffect(() => {
     const sessionId = localStorage.getItem("stripe_session_id");
     const orderData = JSON.parse(localStorage.getItem("order_data"));
+
+    console.log(orderData);
 
     if (!sessionId || !orderData) return;
 
@@ -109,4 +111,6 @@ export default function AllOrderTable({ data }) {
       </table>
     </div>
   );
-}
+};
+
+export default AllOrderTable;

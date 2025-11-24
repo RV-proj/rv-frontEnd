@@ -16,7 +16,6 @@ export default async function Page() {
       )[0]
     : null;
 
-  console.log(data);
   return (
     <section id="userOrder" className="bg-slate-950/50 py-5">
       <div className="container mx-auto px-4 sm:px-6">
@@ -30,7 +29,7 @@ export default async function Page() {
             </h1>
             {profileData &&
               Object.entries(profileData)
-                .slice(0, 4)
+                .slice(0, 2)
                 .map(([key, value]) => {
                   if (key === "avatar_url") return null;
                   return (
