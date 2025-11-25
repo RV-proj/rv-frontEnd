@@ -27,7 +27,7 @@ export default function Confirmation({ open, onClose, session }) {
   // payment handler
   async function handlePay() {
     try {
-      const res = await fetch("http://localhost:5000/order", {
+      const res = await fetch("https://rv-back-end.vercel.app/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
