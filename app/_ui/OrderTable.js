@@ -9,6 +9,7 @@ import AdminStatusDrawer from "./admin/AdminStatusDrawer";
 
 export default function OrderTable({ data, isAdmin }) {
   const [showDrawer, setShowDrawer] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState(null);
   return (
     <>
       <table className="w-full text-sm text-left text-gray-300">
@@ -79,7 +80,15 @@ export default function OrderTable({ data, isAdmin }) {
                 <td className="px-6 py-4">
                   <p>
                     {isAdmin ? (
-                      <button onClick={() => setShowDrawer(true)}>
+                      <button
+                        onClick={() => {
+                          setSelectedOrder({
+                            id: item.id,
+                            status: item.status,
+                          });
+                          setShowDrawer(true);
+                        }}
+                      >
                         <StatusBadge status={item.status} />
                       </button>
                     ) : (
@@ -94,6 +103,8 @@ export default function OrderTable({ data, isAdmin }) {
       </table>
       <AdminStatusDrawer
         open={showDrawer}
+        orderId={selectedOrder?.id}
+        currentStatus={selectedOrder?.status}
         onClose={() => setShowDrawer(false)}
       />
     </>
