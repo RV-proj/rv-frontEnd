@@ -35,28 +35,20 @@ export default function Confirmation({ open, onClose, session }) {
         body: JSON.stringify({
           amount_paid: deposit,
           email: email,
+          orderData: {
+            size: selectedSize,
+            quality: selectedQuality,
+            price: totalPrice,
+            startDate: startDate,
+            endDate: endDate,
+            quantity: quantity,
+          },
         }),
       });
 
       if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
       const data = await res.json();
-
-      // save session ID
-      localStorage.setItem("stripe_session_id", data.sessionId);
-
-      localStorage.setItem(
-        "order_data",
-        JSON.stringify({
-          email: email,
-          size: selectedSize,
-          quality: selectedQuality,
-          price: totalPrice,
-          startDate: startDate,
-          endDate: endDate,
-          quantity: quantity,
-        })
-      );
 
       // redirect to stripe
       window.location.href = data.url;
