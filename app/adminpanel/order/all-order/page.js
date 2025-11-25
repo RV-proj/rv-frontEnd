@@ -2,7 +2,7 @@
 import { getOrders } from "@/_lib/api/orders";
 import { SpinnerMini } from "@/_ui/Spinner";
 import { useQuery } from "@tanstack/react-query";
-import AllOrderTable from "@/_components/Admin/Order/AllOrderTable";
+import OrderTable from "@/_ui/OrderTable";
 
 export default function Page() {
   const { data, isPending } = useQuery({
@@ -14,9 +14,13 @@ export default function Page() {
 
   return (
     <section id="all-order">
-      {/* <p>All order table</p> */}
-
-      {isPending ? <SpinnerMini size="md" /> : <AllOrderTable data={data} />}
+      {isPending ? (
+        <SpinnerMini size="md" />
+      ) : (
+        <div className="relative overflow-x-auto bg-[#0F172A] rounded-xl border border-[#1E293B] shadow">
+          <OrderTable data={data} isAdmin={true} />
+        </div>
+      )}
     </section>
   );
 }
