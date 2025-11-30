@@ -36,19 +36,19 @@ const Pricing = () => {
       list_items: [
         {
           icon: <Info className="w-5 h-5 text-white/40" />,
-          text: "Up to 30% lower total trip cost",
+          text: "Prices vary; upgrades uncommon",
         },
         {
           icon: <Info className="w-5 h-5 text-white/40" />,
-          text: "Premium RVs & hosts",
+          text: "Mixed owner quality & response times",
         },
         {
           icon: <Info className="w-5 h-5 text-white/40" />,
-          text: "24/7 Concierge support",
+          text: "Delivery fees & setup vary",
         },
         {
           icon: <Info className="w-5 h-5 text-white/40" />,
-          text: "Free cancellations up to 48 hrs before pickup",
+          text: "Limited support if things change",
         },
       ],
     },

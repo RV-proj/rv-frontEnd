@@ -36,8 +36,8 @@ const rv = {
     baseNightly: 205,
     hero: "linear-gradient(180deg, rgba(56,189,248,0.25), rgba(56,189,248,0.08)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')",
   },
-  "Double XL": {
-    label: "Double XL",
+  XXL: {
+    label: "XXL",
     people: "10 – 12",
     beds: 6,
     length: "34–38 ft",

@@ -1,13 +1,14 @@
-export async function getOrders() {
-  const res = await fetch("http://localhost:5000/order");
-
-  return await res.json();
-}
+import { fetchWithAuth, getAuthenticatedSession } from "../authSession";
 
 export async function getOrderByEmail(email) {
-  const res = await fetch(`http://localhost:5000/order/email?email=${email}`);
+  const session = await getAuthenticatedSession();
 
-  return await res.json();
+  const data = fetchWithAuth(
+    `http://localhost:5000/order/email?email=${email}`,
+    session.user.accessToken
+  );
+
+  return data;
 }
 
 export async function userStatusUpdate(id, status) {
@@ -18,6 +19,25 @@ export async function userStatusUpdate(id, status) {
     },
     body: JSON.stringify({ status }),
   });
+
+  return await res.json();
+}
+
+export async function createOrder(deposit, email, orderData) {
+  const res = await fetch("http://localhost:5000/order", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({
+      amount_paid: deposit,
+      email: email,
+      orderData: orderData,
+    }),
+  });
+
+  if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
   return await res.json();
 }
