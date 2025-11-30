@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import TierBadge from "@/_ui/TierBadge";
 import QualityBadge from "@/_ui/QualityBadge";
 import { X } from "lucide-react";
+import { createOrder } from "@/_lib/api/orders";
 
 export default function Confirmation({ open, onClose, session }) {
   const email = session.user.email;
@@ -27,28 +28,14 @@ export default function Confirmation({ open, onClose, session }) {
   // payment handler
   async function handlePay() {
     try {
-      const res = await fetch("http://localhost:5000/order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          amount_paid: deposit,
-          email: email,
-          orderData: {
-            size: selectedSize,
-            quality: selectedQuality,
-            price: totalPrice,
-            startDate: startDate,
-            endDate: endDate,
-            quantity: quantity,
-          },
-        }),
+      const data = await createOrder(deposit, email, {
+        size: selectedSize,
+        quality: selectedQuality,
+        price: totalPrice,
+        startDate: startDate,
+        endDate: endDate,
+        quantity: quantity,
       });
-
-      if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-
-      const data = await res.json();
 
       // redirect to stripe
       window.location.href = data.url;
