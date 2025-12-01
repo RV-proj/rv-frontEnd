@@ -1,7 +1,7 @@
 "use server";
 
 import { auth } from "../authSession/auth";
-import { fetchWithAuth } from "../authSession";
+import { fetchWithAuth } from "../authSession/authSession";
 
 export async function getAllOrders() {
   const session = await auth();

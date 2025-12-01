@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSelectedSize, setSelectedQuality } from "@/_lib/store/cartSlice";
 import { sizes } from "@/_lists/sizes";
 import QualityBadge from "@/_ui/QualityBadge";
+import QualityBar from "@/_ui/QualityBar";
+import TripDetails from "../RVSelect/YourSelection-TripDetails";
 
 export default function BookingEstimator() {
   const dispatch = useDispatch();
@@ -30,9 +32,9 @@ export default function BookingEstimator() {
   };
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur relative order-first md:order-0">
+    <div className="sm:w-2xl rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur relative">
       {/* Badge */}
-      <div className="absolute -right-6 -top-6 hidden rotate-12 rounded-full bg-cyan-400 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-slate-900 shadow md:block">
+      <div className="absolute -right-6 -top-6 rotate-12 rounded-full bg-cyan-400 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-slate-900 shadow">
         Save {savingPercentage}% avg
       </div>
 
@@ -60,7 +62,7 @@ export default function BookingEstimator() {
             <button
               key={key}
               onClick={() => handleSizeChange(key)}
-              className={`group relative overflow-hidden rounded-xl border p-3 text-left transition ${
+              className={`group relative overflow-hidden rounded-xl border px-2 py-3 text-left transition ${
                 selectedSize === key
                   ? "border-cyan-400/60 bg-cyan-400/10"
                   : "border-white/10 bg-white/5 hover:bg-white/10"
@@ -80,7 +82,7 @@ export default function BookingEstimator() {
                 <p className="text-xs font-bold uppercase tracking-widest text-cyan-300">
                   {s.label}
                 </p>
-                <div className="mt-1 flex items-center gap-2 text-xs text-white/80">
+                <div className="mt-1 flex flex-nowrap gap-2 items-center text-xs text-white/80 whitespace-nowrap">
                   <Users className="h-3.5 w-3.5" /> {s.sleeps}
                   <span className="opacity-50">•</span>
                   <BedDouble className="h-3.5 w-3.5" /> {s.length}
@@ -96,7 +98,7 @@ export default function BookingEstimator() {
       </div>
 
       {/* Quality Selector */}
-      <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="mt-4 mb-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
         <div className="rounded-xl border border-white/10 bg-white/5 p-3 col-span-3">
           <label className="flex items-center justify-between text-xs text-white/70">
             Quality
@@ -119,7 +121,11 @@ export default function BookingEstimator() {
               </button>
             ))}
           </div>
+          <QualityBar qualityScore={qualityScore} />
         </div>
+      </div>
+      <div className="text-white">
+        <TripDetails />
       </div>
 
       {/* Price Section */}

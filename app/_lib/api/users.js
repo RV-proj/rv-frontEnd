@@ -1,4 +1,7 @@
-import { getAuthenticatedSession, fetchWithAuth } from "../authSession";
+import {
+  getAuthenticatedSession,
+  fetchWithAuth,
+} from "../authSession/authSession";
 
 export async function getUser(email) {
   const res = await fetch(`http://localhost:5000/user/email/${email}`);

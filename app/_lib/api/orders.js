@@ -1,4 +1,7 @@
-import { fetchWithAuth, getAuthenticatedSession } from "../authSession";
+import {
+  fetchWithAuth,
+  getAuthenticatedSession,
+} from "../authSession/authSession";
 
 export async function getOrderByEmail(email) {
   const session = await getAuthenticatedSession();
