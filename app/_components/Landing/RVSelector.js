@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { ChevronRight } from "lucide-react";
@@ -86,7 +87,7 @@ export default function RVSelector() {
               <p className="mt-1 text-xs text-white/70">
                 {rv[k].people} • {rv[k].beds} beds
               </p>
-              <div className="mt-3 h-24 w-full overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-slate-800 to-slate-900">
+              <div className="mt-3 h-24 w-full overflow-hidden rounded-lg border border-white/10 bg-linear-to-br from-slate-800 to-slate-900">
                 <img
                   className="h-full w-full object-cover opacity-90"
                   alt={`${k} example`}
