@@ -16,7 +16,7 @@ export default function HowItWorks() {
           <Card
             icon={1}
             title="Choose your type"
-            text="Pick Small → XXL and share your dates, location and any must-haves."
+            text="Pick Medium → XXL, share your dates, location and any must-haves."
           />
           <Card
             icon={2}
