@@ -55,7 +55,7 @@ export default function YourSelection() {
   return (
     <section
       id="yourselection"
-      className="container mx-auto max-w-7xl px-4 sm:px-6 text-white mt-10"
+      className="container mx-auto max-w-7xl px-4 sm:px-6 text-white mt-10 mb-20"
     >
       <div>
         <h2 className="text-2xl font-semibold tracking-tight">
@@ -67,7 +67,7 @@ export default function YourSelection() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6 items-start  pt-5">
+      <div className="grid lg:grid-cols-2 gap-6 items-start pt-5">
         <VisualCard />
         <div className="space-y-4">
           <TripDetails />
