@@ -1,4 +1,5 @@
 import { ChevronRight, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export default function BookFlexButton({ color = "default" }) {
   const baseClasses =
@@ -10,10 +11,13 @@ export default function BookFlexButton({ color = "default" }) {
       : "bg-cyan-400 text-slate-900 hover:bg-cyan-300 ";
 
   return (
-    <button className={`${baseClasses} ${colorClasses} cursor-pointer`}>
+    <Link
+      href="/rvSelector"
+      className={`${baseClasses} ${colorClasses} cursor-pointer`}
+    >
       <Sparkles className="h-4 w-4 transition group-hover:rotate-12" />
       <span>Book Flex+</span>
       <ChevronRight className="h-4 w-4" />
-    </button>
+    </Link>
   );
 }

@@ -1,4 +1,4 @@
-import { auth } from "./authSession/auth";
+import { auth } from "./auth";
 
 // get authenticated session
 async function getAuthenticatedSession() {

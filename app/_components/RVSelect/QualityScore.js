@@ -3,6 +3,7 @@
 import { useSelector } from "react-redux";
 import QualityScoreCard from "@/_ui/QualityScoreCard";
 import QualityBadge from "@/_ui/QualityBadge";
+import QualityBar from "@/_ui/QualityBar";
 
 const QualityScore = () => {
   const qualityScore = useSelector((state) => state.cart.qualityScore);
@@ -37,18 +38,9 @@ const QualityScore = () => {
     },
   ];
 
-  function getQualityWidth(scoreRange) {
-    if (!scoreRange) return 0;
-    const [min, max] = scoreRange.split("-").map(Number);
-    return (min + max) / 2; // average, e.g. 70-80 → 75%
-  }
-
-  //   notes
-  // container will contain max-w-7xl px-4 sm:px-6 pt-10
   return (
     <section className="bg-slate-950/60">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 ">
-        {/* Quality Score */}
         <div className="rounded-2xl border border-slate-700 p-4 bg-slate-900">
           <div className="flex items-center justify-between">
             <h1 className="font-semibold text-white text-[16px]">
@@ -57,19 +49,13 @@ const QualityScore = () => {
             <QualityBadge quality={qualityScore} />
           </div>
 
-          <div className="h-2 rounded-full bg-slate-800 overflow-hidden mt-5">
-            <div
-              className="h-2 bg-linear-to-r from-cyan-500 via-fuchsia-500 to-purple-600 transition-all duration-700"
-              style={{ width: `${getQualityWidth(qualityScore)}%` }}
-            ></div>
-          </div>
+          <QualityBar qualityScore={qualityScore} />
 
           <p className="mt-2 text-xs text-slate-400">
             Higher score indicates a newer, more feature‑rich model with strong
             guest reviews and confirmed quality.
           </p>
 
-          {/* quality score card */}
           <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 ">
             {qualityScoreCardData.map((card, index) => (
               <QualityScoreCard key={index} {...card} />
