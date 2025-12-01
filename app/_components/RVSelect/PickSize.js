@@ -25,8 +25,8 @@ const PickSize = () => {
               Pick a Size
             </h1>
             <p className="text-sm text-slate-400 mt-1">
-              From S to XXL — Travel Trailers, Fifth Wheels, and Class A
-              options.
+              From M to XXL - smaller travel trailers for solo travelers to
+              massive fifth wheel options
             </p>
           </div>
 
