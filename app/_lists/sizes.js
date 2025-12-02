@@ -10,7 +10,7 @@ export const sizes = {
       "intuitive systems",
       "Versatile floorplans",
     ],
-    img: "https://images.unsplash.com/photo-1560871958-59f4647aa6ad?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=764",
+    img: "sizes-M-medium-hero.webp",
   },
   L: {
     label: "Large (L)",
@@ -23,7 +23,7 @@ export const sizes = {
       "Separate sleeping areas",
       "Larger tanks for boondocking",
     ],
-    img: "https://images.unsplash.com/photo-1608161317310-c079ae39d224?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+    img: "sizes-L-large-hero.webp",
   },
   XL: {
     label: "Extra Large (XL)",
@@ -36,7 +36,7 @@ export const sizes = {
       "Slide‑outs full galley",
       "Ideal for week+ trips",
     ],
-    img: "https://images.unsplash.com/photo-1714044763161-12910756c633?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
+    img: "sizes-XL-extralarge-hero.webp",
   },
   XXL: {
     label: "Ultimate (XXL)",
@@ -49,6 +49,6 @@ export const sizes = {
       "Multiple sleeping zones",
       "Perfect for long stays groups",
     ],
-    img: "https://images.unsplash.com/photo-1652953826135-5b3f50906d85?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627",
+    img: "sizes-XXL-ultimate-hero.webp",
   },
 };
