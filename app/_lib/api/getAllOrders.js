@@ -13,5 +13,9 @@ export async function getAllOrders() {
   const url = "http://localhost:5000/order";
   const data = await fetchWithAuth(url, session.user.accessToken);
 
-  return data;
+  const sorted = Array.isArray(data)
+    ? data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    : data;
+
+  return sorted;
 }

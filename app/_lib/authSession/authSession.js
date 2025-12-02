@@ -32,7 +32,7 @@ async function fetchWithAuth(url, accessToken, options = {}) {
     throw new Error(errorMessage);
   }
 
-  return res.json();
+  return await res.json();
 }
 
 export { getAuthenticatedSession, getAuthHeaders, fetchWithAuth };
