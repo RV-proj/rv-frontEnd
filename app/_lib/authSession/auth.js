@@ -16,7 +16,7 @@ const authConfig = {
     },
     async signIn({ user, account, profile }) {
       try {
-        const res = await fetch(`http://localhost:5000/user`, {
+        const res = await fetch(`https://rv-back-end.vercel.app/user`, {
           method: "POST",
           credentials: "include",
           headers: {
@@ -34,17 +34,6 @@ const authConfig = {
           console.error("No token received from backend!");
           return false;
         }
-
-        // console.log(data);
-
-        // const cookieStore = await cookies();
-        // cookieStore.set("token", data.token, {
-        //   httpOnly: true,
-        //   secure: false,
-        //   sameSite: "lax",
-        //   maxAge: 60 * 60 * 24 * 7, // 7 days
-        //   path: "/",
-        // });
 
         user.accessToken = data.token;
         user.userId = data.user.id;
