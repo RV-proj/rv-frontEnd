@@ -57,7 +57,7 @@ export default function ListView() {
                   {/* Thumbnail */}
                   <div className="w-44 sm:w-56 relative rounded-xl overflow-hidden shrink-0">
                     <img
-                      src="/l.webp"
+                      src={s.img}
                       alt={s.label}
                       className="w-full h-40 sm:h-36 object-cover"
                     />

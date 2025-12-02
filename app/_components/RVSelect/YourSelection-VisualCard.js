@@ -19,7 +19,7 @@ export default function VisualCard() {
     <div className="rounded-3xl overflow-hidden border border-slate-700 bg-slate-900">
       <div className="aspect-video relative">
         <img
-          src="/l.webp"
+          src="sizes-L-large-hero.webp"
           alt="rvImage"
           className="absolute inset-0 w-full h-full object-cover opacity-85"
         />
