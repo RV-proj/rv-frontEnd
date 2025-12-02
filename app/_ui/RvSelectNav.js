@@ -9,7 +9,7 @@ export default function RVSelectNav({ handleProjectShow, activeView }) {
     "absolute inset-0 z-0 bg-gradient-to-r from-gray-500 to-slate-700 transition-opacity duration-300 ease-in-out";
 
   const views = [
-    { id: "basic", label: "Basic" },
+    { id: "basic", label: "Standard View" },
     { id: "matrix", label: "Matrix View" },
     { id: "list", label: "List View" },
   ];

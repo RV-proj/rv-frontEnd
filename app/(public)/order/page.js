@@ -9,7 +9,7 @@ export default async function Page() {
   return (
     <section
       id="userOrder"
-      className="h-[90vh] bg-slate-950/30 py-5 text-white"
+      className="h-[90vh] bg-slate-950/30 py-5 text-white mb-20"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 gap-5 mb-10">

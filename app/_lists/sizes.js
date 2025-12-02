@@ -1,8 +1,8 @@
 export const sizes = {
   M: {
     label: "Medium (M)",
-    length: "23–26ft",
-    sleeps: "3–4",
+    length: "25–30ft",
+    sleeps: "1-4",
     rig: "Travel Trailer",
     benefits: [
       "Compact+Comfort for small families",
@@ -14,8 +14,8 @@ export const sizes = {
   },
   L: {
     label: "Large (L)",
-    length: "27–30ft",
-    sleeps: "4–6",
+    length: "30–35ft",
+    sleeps: "1-5",
     rig: "Travel Trailer",
     benefits: [
       "Families & friends",
@@ -27,8 +27,8 @@ export const sizes = {
   },
   XL: {
     label: "Extra Large (XL)",
-    length: "31–34 ft",
-    sleeps: "6–8",
+    length: "35–40 ft",
+    sleeps: "1-6",
     rig: "Travel Trailer / Fifth Wheel",
     benefits: [
       "Bigger groups & comfort features",
@@ -40,8 +40,8 @@ export const sizes = {
   },
   XXL: {
     label: "Ultimate (XXL)",
-    length: "35–40+ ft",
-    sleeps: "8–10+",
+    length: "40+ ft",
+    sleeps: "1-7",
     rig: "Fifth Wheel / Motorcoach (Class A)",
     benefits: [
       "Premium amenities",

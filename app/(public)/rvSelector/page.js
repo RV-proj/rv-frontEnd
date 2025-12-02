@@ -9,7 +9,7 @@ import PickSize from "@/_components/RVSelect/PickSize";
 import QualityLevel from "@/_components/RVSelect/QualityLevel";
 import QualityScore from "@/_components/RVSelect/QualityScore";
 import YourSelection from "@/_components/RVSelect/YourSelection";
-import ListViewCard from "@/_ui/ListViewCard";
+import ListViewCard from "@/_components/RVSelect/ListView";
 
 export default function Page() {
   const { selectedSize, selectedQuality } = useSelector((state) => state.cart);
@@ -46,8 +46,6 @@ export default function Page() {
 
           {view === "list" && (
             <div className="animate-fadeIn text-white text-lg p-6">
-              <ListViewCard />
-              <ListViewCard />
               <ListViewCard />
             </div>
           )}

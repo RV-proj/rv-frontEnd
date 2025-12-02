@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { ChevronRight } from "lucide-react";
@@ -36,8 +37,8 @@ const rv = {
     baseNightly: 205,
     hero: "linear-gradient(180deg, rgba(56,189,248,0.25), rgba(56,189,248,0.08)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')",
   },
-  "Double XL": {
-    label: "Double XL",
+  XXL: {
+    label: "XXL",
     people: "10 – 12",
     beds: 6,
     length: "34–38 ft",
@@ -86,7 +87,7 @@ export default function RVSelector() {
               <p className="mt-1 text-xs text-white/70">
                 {rv[k].people} • {rv[k].beds} beds
               </p>
-              <div className="mt-3 h-24 w-full overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-slate-800 to-slate-900">
+              <div className="mt-3 h-24 w-full overflow-hidden rounded-lg border border-white/10 bg-linear-to-br from-slate-800 to-slate-900">
                 <img
                   className="h-full w-full object-cover opacity-90"
                   alt={`${k} example`}

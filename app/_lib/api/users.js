@@ -1,4 +1,7 @@
-import { auth } from "../authSession/auth";
+import {
+  getAuthenticatedSession,
+  fetchWithAuth,
+} from "../authSession/authSession";
 
 export async function getUser(email) {
   const res = await fetch(`https://rv-back-end.vercel.app/user/email/${email}`);
@@ -6,8 +9,12 @@ export async function getUser(email) {
 }
 
 export async function getSessionUser() {
-  const session = await auth();
-  const res = await fetch(`https://rv-back-end.vercel.app/user/${session.user.userId}`);
+  const session = await getAuthenticatedSession();
 
-  return await res.json();
+  const data = await fetchWithAuth(
+    `https://rv-back-end.vercel.app/user/${session.user.userId}`,
+    session.user.accessToken
+  );
+
+  return data;
 }
