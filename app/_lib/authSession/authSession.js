@@ -7,7 +7,7 @@ async function getAuthenticatedSession() {
   if (!session?.user?.accessToken) {
     throw new Error("Not authenticated");
   }
-  console.log("Authenticated session:", session);
+  // console.log("Authenticated session:", session);
 
   return session;
 }
