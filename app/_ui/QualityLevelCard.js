@@ -20,21 +20,21 @@ const QualityLevelCard = ({
       <div
         className={`${backgroundColor} inset-0 w-full h-full absolute -z-10`}
       ></div>
-      <div className="flex items-start justify-between">
-        <div className="flex items-center gap-2 w-[70%]">
+      <div className="flex items-start justify-between sm:flex-row flex-col">
+        <div className="flex items-center gap-2 sm:w-[70%]">
           {/* badge */}
           <TierBadge tierKey={plan} />
 
           <p className="text-slate-400 text-xs">{slogan}</p>
         </div>
 
-        <div className="w-[10%]">
+        <div className="sm:w-[10%] w-full ">
           <h1 className="text-[10px] text-slate-500 text-end">Quality Score</h1>
         </div>
       </div>
 
-      <div className="flex items-start justify-between pt-3">
-        <ul className="grid grid-cols-2 gap-x-0 gap-y-2 w-[80%]">
+      <div className="flex items-start justify-between pt-3 ">
+        <ul className="grid sm:grid-cols-2 gap-x-0 gap-y-2 sm:w-[80%]">
           {benefits.map((benefit, index) => (
             <li key={index}>
               <div className="flex items-center gap-2 text-sm">
