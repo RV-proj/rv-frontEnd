@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { setSelectedQuality, setSelectedSize } from "@/_lib/store/cartSlice";
@@ -42,7 +43,8 @@ export default function ListView() {
               const isActive =
                 selectedSize === sKey && selectedQuality === tKey;
 
-              const { flexPrice, marketPrice } = getPrice(sKey, tKey);
+              const { flexPrice, marketPrice, image } = getPrice(sKey, tKey);
+              console.log(image);
 
               return (
                 <div
@@ -57,7 +59,7 @@ export default function ListView() {
                   {/* Thumbnail */}
                   <div className="w-44 sm:w-56 relative rounded-xl overflow-hidden shrink-0">
                     <img
-                      src={s.img}
+                      src={image}
                       alt={s.label}
                       className="w-full h-40 sm:h-36 object-cover"
                     />

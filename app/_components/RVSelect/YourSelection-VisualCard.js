@@ -5,6 +5,7 @@ import { Check, GaugeCircle, Ruler, Users } from "lucide-react";
 import { useSelector } from "react-redux";
 import { sizes } from "@/_lists/sizes";
 import { tiers } from "@/_lists/tiers";
+import { getPrice } from "@/_lib/getPrice";
 import TierBadge from "@/_ui/TierBadge";
 import QualityBadge from "@/_ui/QualityBadge";
 
@@ -14,14 +15,15 @@ export default function VisualCard() {
 
   const size = sizes[selectedSize];
   const quality = tiers[selectedQuality];
+  const { image } = getPrice(selectedSize, selectedQuality);
 
   return (
     <div className="rounded-3xl overflow-hidden border border-slate-700 bg-slate-900">
       <div className="aspect-video relative">
         <img
-          src="sizes-L-large-hero.webp"
+          src={image}
           alt="rvImage"
-          className="absolute inset-0 w-full h-full object-cover opacity-85"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/60 to-black/10" />
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
