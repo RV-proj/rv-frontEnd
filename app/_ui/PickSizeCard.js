@@ -21,7 +21,7 @@ const PickSizeCard = ({
       <div className="relative">
         {/* image (optional) */}
         {img ? (
-          <Image
+          <img
             src={img}
             alt={label}
             width={100}
