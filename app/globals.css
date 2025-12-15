@@ -57,3 +57,7 @@
     animation: popIn 0.25s ease-out forwards;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
