@@ -9,7 +9,7 @@ import NavLinks from "./NavLinks";
 
 const links = [
   { href: "/#why", label: "Why Flex+", sectionId: "why" },
-  { href: "/#how-it-works", label: "How it Works", sectionId: "how" },
+  { href: "/#how", label: "How it Works", sectionId: "how" },
   { href: "/rvSelector", label: "RV Selector" },
 ];
 
