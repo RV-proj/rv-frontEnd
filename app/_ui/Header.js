@@ -8,9 +8,9 @@ import HeaderMobile from "./HeaderMobile";
 import NavLinks from "./NavLinks";
 
 const links = [
+  { href: "/rvSelector", label: "RV Selector" },
   { href: "/#why", label: "Why Flex+", sectionId: "why" },
   { href: "/#how", label: "How it Works", sectionId: "how" },
-  { href: "/rvSelector", label: "RV Selector" },
 ];
 
 export default async function Header() {

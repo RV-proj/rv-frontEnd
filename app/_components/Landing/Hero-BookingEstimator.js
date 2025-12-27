@@ -149,9 +149,9 @@ export default function BookingEstimator() {
           </p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5">
-          <p className="text-xs text-white/70">Prep Fee</p>
-          <p className="text-2xl font-extrabold text-white">$150</p>
-          <p className="text-xs text-white/50">One-time per booking</p>
+          <p className="text-xs text-white/70">Only 5% Down</p>
+          <p className="text-2xl font-extrabold text-white">$XX.XX </p>
+          <p className="text-xs text-white/50">to lock in your RV</p>
         </div>
       </div>
     </div>
