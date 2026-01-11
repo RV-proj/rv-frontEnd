@@ -105,7 +105,7 @@ export default function ListView() {
                       </div>
 
                       <div className="text-[11px] text-slate-400 mt-1">
-                        Setup + Cleaning Fee: ${cleaningPrepFee} • Tax: {tax}%
+                        Cleaning & Prep Fee: ${cleaningPrepFee} • Tax: {tax}%
                       </div>
 
                       <div className="text-[11px] text-emerald-400 mt-1">

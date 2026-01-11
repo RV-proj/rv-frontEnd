@@ -2,7 +2,7 @@
 
 export default function RVSelectNav({ handleProjectShow, activeView }) {
   const baseTab =
-    "group relative h-full flex-1 cursor-pointer transition-all duration-300 ease-in-out";
+    "group relative h-full flex-1  cursor-pointer transition-all duration-300 ease-in-out";
   const tabText =
     "relative z-10 flex h-full items-center justify-center bg-transparent text-xs md:text-sm md:font-semibold text-white";
   const hoverBg =
@@ -15,7 +15,7 @@ export default function RVSelectNav({ handleProjectShow, activeView }) {
   ];
 
   return (
-    <div className="flex h-12 w-72 items-center justify-between rounded-full border border-gray-800">
+    <div className="flex h-12 w-100 items-center justify-between rounded-full border border-gray-800">
       {views.map((v, i) => (
         <div
           key={v.id}

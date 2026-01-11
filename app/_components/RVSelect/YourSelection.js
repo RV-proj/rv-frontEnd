@@ -46,7 +46,7 @@ const SIZES = [
     length: "35–40+ ft",
     sleeps: "8–10+",
     ideal: "Long stays, premium amenities",
-    rig: "Fifth Wheel / Motorcoach (Class A)",
+    rig: "Fifth Wheel / Motorcoach",
     // img: `${IMG_BASE}/sizes-XXL-ultimate-hero.webp`,
   },
 ];

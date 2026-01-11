@@ -28,8 +28,8 @@ export default function PriceBreakdown() {
       Icon: StarIcon,
     },
     { label: "Delivery (optional)", value: 56, Icon: TruckIcon },
-    { label: "Setup + Cleaning", value: cleaningPrepFee, Icon: ShieldIcon },
-    { label: `Tax(${tax}%)`, value: taxAmount, Icon: BadgePercentIcon },
+    { label: "Cleaning & Prep", value: cleaningPrepFee, Icon: ShieldIcon },
+    { label: `Tax (${tax}%)`, value: taxAmount, Icon: BadgePercentIcon },
     { label: `Quantity`, value: quantity, Icon: Calculator },
   ];
   return (

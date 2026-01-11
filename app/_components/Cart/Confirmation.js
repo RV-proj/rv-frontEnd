@@ -36,9 +36,9 @@ export default function Confirmation({ open, onClose, session }) {
         endDate: endDate,
         quantity: quantity,
       });
-
       // redirect to stripe
-      window.location.href = data.url;
+      window.open(data.url, "_blank", "noopener,noreferrer");
+      // window.location.href = data.url;
     } catch (err) {
       console.error("Error creating order:", err.message);
       toast.error("Failed to create order.");
@@ -117,7 +117,7 @@ export default function Confirmation({ open, onClose, session }) {
                   <p className="text-gray-400 mb-1">Total Price</p>
 
                   <p className="bg-[#0a1626] p-2 rounded-md mt-1 border border-white/5">
-                    {totalPrice}
+                    {Math.round(totalPrice * 100) / 100}
                   </p>
                 </div>
               </div>
@@ -143,25 +143,16 @@ export default function Confirmation({ open, onClose, session }) {
             </h3>
 
             <ol className="list-decimal list-inside text-sm text-gray-300 space-y-2 mb-6">
+              <li>1. 5% deposit now locks price, refundable until confirmed</li>
               <li>
-                <span className="font-semibold">Step 1 —</span> 5% deposit
-                (locks price, refundable until confirmed)
+                2. We confirm RV, arrange logistics, and apply upgrades if
+                applicable
               </li>
+              <li>3. 45% of balance due within 48 hours of confirmation</li>
+              <li>4. Final balance auto-billed 14 days before start date</li>
               <li>
-                <span className="font-semibold">Step 2 —</span> We confirm RV
-                and apply upgrades
-              </li>
-              <li>
-                <span className="font-semibold">Step 3 —</span> 45% due within
-                48h
-              </li>
-              <li>
-                <span className="font-semibold">Step 4 —</span> $750 Security
-                Deposit (auto-billed 7 days before start)
-              </li>
-              <li>
-                <span className="font-semibold">Step 5 —</span> Final balance
-                due 2 days before trip
+                5. Refundable security deposit of $750 auto billed 7 days before
+                trip
               </li>
             </ol>
 
