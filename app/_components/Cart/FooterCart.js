@@ -86,7 +86,7 @@ export default function FooterCart({ session }) {
               }}
               className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
             >
-              Continue to Payment
+              Continue
             </span>
           )}
         </div>

@@ -10,7 +10,7 @@ export const sizes = {
       "intuitive systems",
       "Versatile floorplans",
     ],
-    img: "sizes-M-medium-hero.webp",
+    img: "sizes-M-medium-hero.jpg",
   },
   L: {
     label: "Large (L)",
@@ -23,7 +23,7 @@ export const sizes = {
       "Separate sleeping areas",
       "Larger tanks for boondocking",
     ],
-    img: "sizes-L-large-hero.webp",
+    img: "sizes-L-large-hero.jpg",
   },
   XL: {
     label: "Extra Large (XL)",
@@ -36,19 +36,19 @@ export const sizes = {
       "Slide‑outs full galley",
       "Ideal for week+ trips",
     ],
-    img: "sizes-XL-extralarge-hero.webp",
+    img: "sizes-XL-extralarge-hero.jpg",
   },
   XXL: {
     label: "Ultimate (XXL)",
     length: "40+ ft",
     sleeps: "1-7",
-    rig: "Fifth Wheel / Motorcoach (Class A)",
+    rig: "Fifth Wheel / Motorcoach",
     benefits: [
       "Premium amenities",
       "Residential feel",
       "Multiple sleeping zones",
       "Perfect for long stays groups",
     ],
-    img: "sizes-XXL-ultimate-hero.webp",
+    img: "sizes-XXL-ultimate-hero.jpg",
   },
 };

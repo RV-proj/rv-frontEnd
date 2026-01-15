@@ -16,7 +16,7 @@ const authConfig = {
     },
     async signIn({ user, account, profile }) {
       try {
-        const res = await fetch(`https://rv-back-end.vercel.app/user`, {
+        const res = await fetch(`http://localhost:5000/user`, {
           method: "POST",
           credentials: "include",
           headers: {
