@@ -51,7 +51,7 @@ export default function Confirmation({ open, onClose, session }) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-6xl mx-4 rounded-2xl bg-slate-950 text-white border border-white/10 shadow-2xl p-8 animate-popIn"
+        className="w-full max-w-7xl mx-4 rounded-2xl bg-slate-950 text-white border border-white/10 shadow-2xl p-8 animate-popIn"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="bg-slate-900 border border-white/10 rounded-xl p-5 mb-6">
@@ -78,7 +78,7 @@ export default function Confirmation({ open, onClose, session }) {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {/* Left: Cart Info */}
           <div className="bg-slate-900 border border-white/10 rounded-xl p-5">
             <h3 className="text-xl font-bold mb-4">Your Selection</h3>
@@ -136,25 +136,158 @@ export default function Confirmation({ open, onClose, session }) {
             </div>
           </div>
 
+          {/* middle checkout steps */}
+          <div className="bg-slate-900 border border-white/10 rounded-xl p-5">
+            <h3 className="text-lg font-semibold mb-4">
+              Please Fill up the Delivery Address Form
+            </h3>
+
+            <div>
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+            </div>
+
+            {/* Address Details */}
+            <div className="space-y-4 mt-3">
+              <div>
+                <label
+                  htmlFor="streetAddress"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  Street Address *
+                </label>
+                <input
+                  type="text"
+                  id="streetAddress"
+                  name="streetAddress"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  placeholder="123 Main Street"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label
+                    htmlFor="city"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    City *
+                  </label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                    placeholder="New York"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="state"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    State *
+                  </label>
+                  <input
+                    type="text"
+                    id="state"
+                    name="state"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                    placeholder="NY"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="zipCode"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    ZIP Code *
+                  </label>
+                  <input
+                    type="text"
+                    id="zipCode"
+                    name="zipCode"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                    placeholder="10001"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="country"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  Country *
+                </label>
+                <select
+                  id="country"
+                  name="country"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-slate-900"
+                >
+                  <option value="United States">United States</option>
+                  <option value="Canada">Canada</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
           {/* Right: Checkout Steps */}
           <div className="bg-slate-900 border border-white/10 rounded-xl p-5">
             <h3 className="text-lg font-semibold mb-4">
               Checkout (Pay 5% deposit to lock your RV)
             </h3>
 
-            <ol className="list-decimal list-inside text-sm text-gray-300 space-y-2 mb-6">
-              <li>1. 5% deposit now locks price, refundable until confirmed</li>
+            <ol className="list-decimal list-inside text-sm text-gray-300 space-y-2 mb-4">
+              <li> 5% deposit now locks price, refundable until confirmed</li>
               <li>
-                2. We confirm RV, arrange logistics, and apply upgrades if
+                We confirm RV, arrange logistics, and apply upgrades if
                 applicable
               </li>
-              <li>3. 45% of balance due within 48 hours of confirmation</li>
-              <li>4. Final balance auto-billed 14 days before start date</li>
+              <li>45% of balance due within 48 hours of confirmation</li>
+              <li>Final balance auto-billed 14 days before start date</li>
               <li>
-                5. Refundable security deposit of $750 auto billed 7 days before
+                Refundable security deposit of $750 auto billed 7 days before
                 trip
               </li>
             </ol>
+
+            <div>
+              <h1 className="text-gray-400">
+                Please describe the nature of your trip and any special
+                requests. The more information you provide, the better we can
+                sync you up with your ideal RV and experience (optional)
+              </h1>
+              <textarea
+                name=""
+                id=""
+                className="ring ring-cyan-700 w-full my-3 rounded-sm p-2"
+              ></textarea>
+            </div>
 
             <div className="flex justify-end">
               {/* confirm payment */}
