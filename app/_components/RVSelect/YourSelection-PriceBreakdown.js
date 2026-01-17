@@ -29,7 +29,7 @@ export default function PriceBreakdown() {
   const handleDeliverySelect = (option, price, event) => {
     setDeliveryOption(option);
     setDeliveryPrice(price);
-    // Close the dropdown
+
     const details = event.target.closest("details");
     if (details) {
       details.removeAttribute("open");
@@ -55,7 +55,7 @@ export default function PriceBreakdown() {
       <div className="mb-3 rounded-lg bg-emerald-900/40 text-emerald-300 p-3 text-xs flex items-center justify-between border border-emerald-700/40">
         <span>Flex+ savings vs. typical market</span>
         <span className="font-semibold">
-          ${saving} ({savingPercentage}% off)
+          ${Math.round(saving * totalDate * quantity)} ({savingPercentage}% off)
         </span>
       </div>
       <div className="space-y-2">
@@ -86,8 +86,8 @@ export default function PriceBreakdown() {
                     {deliveryOption === null
                       ? "Select delivery option"
                       : deliveryOption === "transport"
-                      ? "I will transport"
-                      : "Add Delivery, Setup & Pickup"}
+                        ? "I will transport"
+                        : "Add Delivery, Setup & Pickup"}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">

@@ -44,7 +44,7 @@ export default function ListView() {
                 selectedSize === sKey && selectedQuality === tKey;
 
               const { flexPrice, marketPrice, image } = getPrice(sKey, tKey);
-              console.log(image);
+              console.log(t);
 
               return (
                 <div
@@ -68,11 +68,11 @@ export default function ListView() {
                   {/* Card Body */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
+                      <span className="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-emerald-900/40 text-emerald-300 border border-emerald-700/50">
+                        Quality Score {t.qualityScore}
+                      </span>
                       <TierBadge tierKey={tKey} />
                       <span className="text-xs text-slate-400">{s.rig}</span>
-                      <span className="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-emerald-900/40 text-emerald-300 border border-emerald-700/50">
-                        Quality Score {t.qScore}
-                      </span>
                     </div>
 
                     <h4 className="mt-1 font-semibold text-base truncate">
