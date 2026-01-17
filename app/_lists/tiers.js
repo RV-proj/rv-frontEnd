@@ -6,7 +6,12 @@ export const tiers = {
     color: "from-slate-600 to-slate-800",
     tag: "bg-slate-800 text-slate-200 border-slate-600",
     qualityScore: "75",
-    img: "/mfzen4n7lfxhqyy5l7ir.jpg",
+    images: [
+      "./Large/large-(1).JPG",
+      "./Large/large-(2).JPG",
+      "./Large/large-(3).JPG",
+      "./Large/large-(4).JPG",
+    ],
     benefits: [
       "Clean & comfortable",
       "Well‑maintained systems",
@@ -21,7 +26,12 @@ export const tiers = {
     color: "from-cyan-500 to-cyan-700",
     tag: "bg-cyan-900 text-cyan-200 border-cyan-600",
     qualityScore: "95",
-    img: "/IMG_0136.jpg",
+    images: [
+      "./Medium/medium(3).png",
+      "./Medium/medium(2).jpg",
+      "./Medium/medium(1).jpg",
+      "./Medium/medium(4).webp",
+    ],
     benefits: [
       "Newer model or finish",
       "Convenience‑focused amenities",
@@ -36,7 +46,12 @@ export const tiers = {
     color: "from-cyan-400 via-fuchsia-400 to-purple-600",
     tag: "bg-gradient-to-r from-cyan-950 via-fuchsia-950 to-purple-950 text-fuchsia-200 border-fuchsia-700",
     qualityScore: "95",
-    img: "/Screenshot 2025-10-10 145654.png",
+    images: [
+      "./XXL/XXL(1).JPG",
+      "./XXL/XXL(2).JPG",
+      "./XXL/XXL(3).JPG",
+      "./XXL/XXL(4).JPG",
+    ],
     benefits: [
       "High comfort standard",
       "Modern interiors &amp; finishes",

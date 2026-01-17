@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { Check } from "lucide-react";
-import Image from "next/image";
 
 const PickSizeCard = ({
   label,
