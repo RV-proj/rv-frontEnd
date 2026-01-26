@@ -24,7 +24,7 @@ const Pricing = () => {
         },
         {
           icon: <CircleCheck className="w-5 h-5 text-green-500" />,
-          text: "Free cancellations up to 48 hrs before pickup",
+          text: "Complimentary upgrade potential",
         },
       ],
       action: <BookFlexButton />,

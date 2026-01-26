@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { Check } from "lucide-react";
-import Image from "next/image";
 
 const PickSizeCard = ({
   label,
@@ -21,7 +21,7 @@ const PickSizeCard = ({
       <div className="relative">
         {/* image (optional) */}
         {img ? (
-          <Image
+          <img
             src={img}
             alt={label}
             width={100}

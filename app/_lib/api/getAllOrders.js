@@ -10,7 +10,7 @@ export async function getAllOrders() {
     throw new Error("Not authenticated");
   }
 
-  const url = "https://rv-back-end.vercel.app/order";
+  const url = "http://localhost:5000/order";
   const data = await fetchWithAuth(url, session.user.accessToken);
 
   const sorted = Array.isArray(data)

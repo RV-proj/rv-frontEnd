@@ -17,9 +17,9 @@ export default function Page() {
   const [view, setView] = useState("basic");
 
   return (
-    <section className="bg-[#020618] min-h-screen overflow-hidden pb-10">
-      <div className="pt-10 container mx-auto max-w-7xl px-4 sm:px-6 flex flex-col gap-8">
-        <div className="flex items-center justify-between">
+    <section className="bg-[#020618] min-h-screen overflow-hidden pb-28">
+      <div className="pt-10  container mx-auto max-w-7xl px-4 sm:px-6 flex flex-col gap-8">
+        <div className="flex items-center justify-between sm:flex-row flex-col sm:gap-0 gap-5">
           <div className="flex items-center gap-3">
             <Sparkles className="h-10 w-10 text-cyan-300" />
             <h1 className="text-xl md:text-4xl font-bold tracking-tight flex items-center gap-3 text-white">

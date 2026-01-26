@@ -77,7 +77,7 @@ export default function FullMatrix() {
                           ${flexPrice} / night
                         </div>
                         <div className="text-[11px] text-slate-400">
-                          Setup + Cleaning Fee: ${cleaningPrepFee} • Tax: {tax}%
+                          Cleaning & Prep Fee: ${cleaningPrepFee} • Tax: {tax}%
                         </div>
 
                         <div className="mt-1 text-[11px] text-emerald-300">

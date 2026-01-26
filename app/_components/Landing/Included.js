@@ -17,12 +17,12 @@ export default function Included() {
           </h2>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <Pill
+          {/* <Pill
             size="lg"
             icon={<CheckCircle2 className="text-cyan-400 h-5 w-5" />}
           >
             Full delivery & setup
-          </Pill>
+          </Pill> */}
           <Pill
             size="lg"
             icon={<CheckCircle2 className="text-cyan-400 h-5 w-5" />}
@@ -64,6 +64,12 @@ export default function Included() {
             icon={<CheckCircle2 className="text-cyan-400 h-5 w-5" />}
           >
             Pet-friendly options
+          </Pill>{" "}
+          <Pill
+            size="lg"
+            icon={<CheckCircle2 className="text-cyan-400 h-5 w-5" />}
+          >
+            Delivery & setup add-on
           </Pill>
         </div>
       </div>

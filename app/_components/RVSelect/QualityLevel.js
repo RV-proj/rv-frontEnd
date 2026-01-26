@@ -4,6 +4,7 @@ import { tiers } from "@/_lists/tiers";
 import QualityLevelCard from "@/_ui/QualityLevelCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedQuality } from "@/_lib/store/cartSlice";
+import { useEffect } from "react";
 
 const QualityLevel = () => {
   const qualityLevelCardData = Object.entries(tiers).map(([key, value]) => ({
@@ -19,6 +20,22 @@ const QualityLevel = () => {
   const handleSelect = (key) => {
     dispatch(setSelectedQuality(key));
   };
+
+  // Auto-scroll to "Your Selection" when quality is selected
+  useEffect(() => {
+    if (selectedQuality) {
+      const yourSelectionSection = document.getElementById("yourselection");
+      if (yourSelectionSection) {
+        // Small delay to ensure DOM is updated
+        setTimeout(() => {
+          yourSelectionSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
+    }
+  }, [selectedQuality]);
 
   return (
     <section className="bg-slate-950/60 pt-10">
