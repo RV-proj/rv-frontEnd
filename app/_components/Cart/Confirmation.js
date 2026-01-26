@@ -191,6 +191,6 @@ export default function Confirmation({ open, onClose, session }) {
         </div>
       </div>
     </div>,
-    document.body
+    document.body,
   );
 }
