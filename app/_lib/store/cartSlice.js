@@ -24,13 +24,13 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     setSelectedSize: (state, action) => {
-      if (state.selectedSize === action.payload) return; // no useless work
+      if (state.selectedSize === action.payload) return;
       state.selectedSize = action.payload;
       priceCalc(state);
     },
 
     setSelectedQuality: (state, action) => {
-      if (state.selectedQuality === action.payload) return; // skip useless calc
+      if (state.selectedQuality === action.payload) return;
 
       state.selectedQuality = action.payload;
 
