@@ -30,15 +30,17 @@ export default function Confirmation({ open, onClose, session }) {
   // payment handler
   async function handlePay() {
     try {
+      const trimmedDescription = tripDescription.trim();
+
       const data = await createOrder(deposit, email, {
         size: selectedSize,
         quality: selectedQuality,
         price: totalPrice,
         startDate: startDate,
         endDate: endDate,
-        tripDescription: tripDescription,
+        tripDescription: trimmedDescription || null,
+        quantity: quantity,
       });
-
       window.open(data.url, "_blank", "noopener,noreferrer");
     } catch (err) {
       console.error("Error creating order:", err.message);
