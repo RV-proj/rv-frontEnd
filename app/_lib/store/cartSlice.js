@@ -9,13 +9,21 @@ const initialState = {
   endDate: "",
   totalDate: null,
   quantity: 1,
+
   totalPrice: 0,
   flexPrice: 0,
+
   cleaningPrepFee: 150,
   tax: 6,
   taxAmount: 0,
+
   saving: 0,
   savingPercentage: 0,
+
+  downPayment: 0,
+
+  deliveryOption: null, // "transport" | "delivery" | null
+  deliveryPrice: 0,
 };
 
 const cartSlice = createSlice({
@@ -23,13 +31,13 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     setSelectedSize: (state, action) => {
-      if (state.selectedSize === action.payload) return; // no useless work
+      if (state.selectedSize === action.payload) return;
       state.selectedSize = action.payload;
       priceCalc(state);
     },
 
     setSelectedQuality: (state, action) => {
-      if (state.selectedQuality === action.payload) return; // skip useless calc
+      if (state.selectedQuality === action.payload) return;
 
       state.selectedQuality = action.payload;
 
@@ -69,6 +77,25 @@ const cartSlice = createSlice({
       state.quantity = action.payload;
       priceCalc(state);
     },
+    setDeliveryOption: (state, action) => {
+      const option = action.payload; // "transport" | "delivery" | null
+
+      if (state.deliveryOption === option) return;
+
+      state.deliveryOption = option;
+
+      switch (option) {
+        case "transport":
+          state.deliveryPrice = 0;
+          break;
+        case "delivery":
+          state.deliveryPrice = 250;
+          break;
+        default:
+          state.deliveryPrice = 0;
+      }
+      priceCalc(state);
+    },
   },
 });
 
@@ -79,6 +106,7 @@ export const {
   setEndDate,
   setTotalDate,
   setQuantity,
+  setDeliveryOption,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

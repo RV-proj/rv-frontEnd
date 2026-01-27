@@ -22,7 +22,7 @@ export default function FullMatrix() {
   return (
     <section
       id="fullmatrix"
-      className="container mx-auto max-w-7xl px-4 sm:px-6 text-white mt-10 space-y-5 mb-10"
+      className="container mx-auto max-w-7xl sm:px-6 text-white space-y-5 my-10"
     >
       <div>
         <h2 className="text-2xl font-semibold tracking-tight">
@@ -64,14 +64,15 @@ export default function FullMatrix() {
                   const { flexPrice, marketPrice } = getPrice(sKey, tKey);
 
                   return (
-                    <td key={tKey} className="p-3 align-top">
+                    <td key={tKey} className="px-1 py-2 align-top text-center">
                       <button
                         onClick={() => handleSelect(sKey, tKey)}
-                        className={`w-full text-left rounded-xl border px-3 py-2 transition ${
-                          isActive
-                            ? "border-cyan-400 ring-2 ring-cyan-300 bg-slate-900"
-                            : "border-slate-700 hover:bg-slate-800"
-                        }`}
+                        className={`text-left rounded-xl border px-3 py-2 transition w-[110px] md:w-full
+                              ${
+                                isActive
+                                  ? "border-cyan-400 ring-2 ring-cyan-300 bg-slate-900"
+                                  : "border-slate-700 hover:bg-slate-800"
+                              }`}
                       >
                         <div className="font-medium tabular-nums">
                           ${flexPrice} / night

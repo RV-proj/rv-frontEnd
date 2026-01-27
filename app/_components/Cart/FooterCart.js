@@ -7,6 +7,7 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import TierBadge from "../../_ui/TierBadge";
 import Confirmation from "./Confirmation";
+import SignInWithGoogle from "../Auth/SigninWithGoogleButton";
 
 export default function FooterCart({ session }) {
   const [open, setOpen] = useState(false);
@@ -79,16 +80,19 @@ export default function FooterCart({ session }) {
               ${Math.round(totalPrice)}
             </div>
           </div>
-          {isSelected && (
-            <span
-              onClick={() => {
-                setOpen(true);
-              }}
-              className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
-            >
-              Continue
-            </span>
-          )}
+          {isSelected &&
+            (session ? (
+              <span
+                onClick={() => setOpen(true)}
+                className="rounded-xl px-6 py-3 font-semibold text-white bg-linear-to-r from-cyan-500 to-fuchsia-600 shadow-lg hover:cursor-pointer"
+              >
+                Continue
+              </span>
+            ) : (
+              <div className="flex flex-col">
+                <SignInWithGoogle />
+              </div>
+            ))}
         </div>
       </div>
       {open && (
