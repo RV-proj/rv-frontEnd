@@ -13,38 +13,56 @@ const QualityLevelCard = ({
   return (
     <div
       onClick={onClick}
-      className={`rounded-2xl p-4 border relative z-10 overflow-hidden border-transparent cursor-pointer ${
-        isSelected ? "ring ring-cyan-400 border-cyan-400" : "border-transparent"
-      }`}
+      className={[
+        "relative overflow-hidden rounded-2xl p-4 sm:p-5",
+        "border cursor-pointer transition",
+        "focus:outline-none",
+        isSelected
+          ? "ring-2 ring-cyan-400 border-cyan-400"
+          : "border-slate-800 hover:border-slate-700",
+      ].join(" ")}
     >
-      <div
-        className={`${backgroundColor} inset-0 w-full h-full absolute -z-10`}
-      ></div>
-      <div className="flex items-start justify-between sm:flex-row flex-col">
-        <div className="flex items-center gap-2 sm:w-[70%]">
-          {/* badge */}
-          <TierBadge tierKey={plan} />
+      <div className={`${backgroundColor} absolute inset-0 -z-10`} />
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3 sm:flex-1 min-w-0">
+          <div className="shrink-0">
+            <TierBadge tierKey={plan} />
+          </div>
 
-          <p className="text-slate-400 text-xs">{slogan}</p>
+          <p className="text-slate-400 text-xs sm:text-sm leading-snug wrap-break-word min-w-0">
+            {slogan}
+          </p>
         </div>
 
-        <div className="sm:w-[10%] w-full ">
-          <h1 className="text-[10px] text-slate-500 text-end">Quality Score</h1>
+        <div className="flex items-center justify-between sm:block sm:text-right shrink-0">
+          <span className="text-[10px] sm:text-xs text-slate-500">
+            Quality Score
+          </span>
+          <span className="sm:hidden text-white font-bold tabular-nums">
+            {qualityScore}
+          </span>
         </div>
       </div>
 
-      <div className="flex items-start justify-between pt-3 ">
-        <ul className="grid sm:grid-cols-2 gap-x-0 gap-y-2 sm:w-[80%]">
+      <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 sm:flex-1 min-w-0">
           {benefits.map((benefit, index) => (
-            <li key={index}>
-              <div className="flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                <p className="text-white/80">{benefit}</p>
+            <li key={index} className="min-w-0">
+              <div className="flex items-start gap-2">
+                <Check className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <p className="text-white/80 text-sm leading-snug wrap-break-word min-w-0">
+                  {benefit}
+                </p>
               </div>
             </li>
           ))}
         </ul>
-        <h1 className="text-white font-bold">{qualityScore}</h1>
+
+        <div className="hidden sm:flex items-start justify-end shrink-0">
+          <h1 className="text-white font-bold text-lg tabular-nums">
+            {qualityScore}
+          </h1>
+        </div>
       </div>
     </div>
   );
