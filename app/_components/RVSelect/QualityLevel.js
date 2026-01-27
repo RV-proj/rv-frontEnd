@@ -45,8 +45,8 @@ const QualityLevel = () => {
             Pick a Quality Level
           </h1>
           <p className="text-sm text-slate-400 mt-1 ">
-            Basic (1 diamond), Standard (2), Premium (3). See how we score
-            quality below.
+            Basic (1 diamond), Standard (2 diamond), Premium (3 diamond). See
+            how we score quality below.
           </p>
         </div>
 

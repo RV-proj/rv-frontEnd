@@ -8,7 +8,7 @@ export async function getOrderByEmail(email) {
 
   const data = fetchWithAuth(
     `http://localhost:5000/order/email?email=${email}`,
-    session.user.accessToken
+    session.user.accessToken,
   );
 
   return data;
@@ -22,7 +22,6 @@ export async function userStatusUpdate(id, status) {
     },
     body: JSON.stringify({ status }),
   });
-
   return await res.json();
 }
 
@@ -39,8 +38,6 @@ export async function createOrder(deposit, email, orderData) {
       orderData: orderData,
     }),
   });
-
-  if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-
+  if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`); // Add backticks
   return await res.json();
 }

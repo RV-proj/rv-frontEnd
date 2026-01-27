@@ -87,7 +87,7 @@ export default function OrderTable({ data, isAdmin, item_per_page = 4 }) {
                 <td className="px-6 py-4">
                   <p>Total Price: ${item.price}</p>
                   <p>Paid: ${item.amount_paid}</p>
-                  <p>Remaining: ${remaining}</p>
+                  <p>Remaining: ${Math.round(remaining)}</p>
                 </td>
 
                 <td className="px-6 py-4">
