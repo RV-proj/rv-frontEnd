@@ -64,7 +64,7 @@ export default function FullMatrix() {
                   const { flexPrice, marketPrice } = getPrice(sKey, tKey);
 
                   return (
-                    <td key={tKey} className="p-3 align-top">
+                    <td key={tKey} className="px-1 py-2 align-top">
                       <button
                         onClick={() => handleSelect(sKey, tKey)}
                         className={`w-full text-left rounded-xl border px-3 py-2 transition ${
