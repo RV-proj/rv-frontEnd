@@ -16,6 +16,7 @@ const initialState = {
   taxAmount: 0,
   saving: 0,
   savingPercentage: 0,
+  downPayment: 0,
 };
 
 const cartSlice = createSlice({

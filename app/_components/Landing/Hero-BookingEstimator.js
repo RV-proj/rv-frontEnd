@@ -15,6 +15,7 @@ export default function BookingEstimator() {
     savingPercentage,
     totalPrice,
     qualityScore,
+    downPayment,
   } = useSelector((state) => state.cart);
 
   const handleSizeChange = (key) => {
@@ -150,7 +151,7 @@ export default function BookingEstimator() {
         </div>
         <div className="rounded-2xl border border-white/10 bg-linear-to-br from-slate-900 to-slate-800/60 p-5">
           <p className="text-xs text-white/70">Only 5% Down</p>
-          <p className="text-2xl font-extrabold text-white">$XX.XX </p>
+          <p className="text-2xl font-extrabold text-white">${downPayment} </p>
           <p className="text-xs text-white/50">to lock in your RV</p>
         </div>
       </div>
