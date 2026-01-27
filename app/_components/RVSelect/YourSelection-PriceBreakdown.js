@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   Percent,
   Calculator,
@@ -10,54 +9,55 @@ import {
   Truck,
   Info,
 } from "lucide-react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setDeliveryOption } from "@/_lib/store/cartSlice";
 
 export default function PriceBreakdown() {
-  const saving = useSelector((state) => state.cart.saving);
-  const savingPercentage = useSelector((state) => state.cart.savingPercentage);
-  const cleaningPrepFee = useSelector((state) => state.cart.cleaningPrepFee);
-  const tax = useSelector((state) => state.cart.tax);
-  const taxAmount = useSelector((state) => state.cart.taxAmount);
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
-  const flexPrice = useSelector((state) => state.cart.flexPrice);
-  const totalDate = useSelector((state) => state.cart.totalDate);
-  const quantity = useSelector((state) => state.cart.quantity);
+  const dispatch = useDispatch();
 
-  const [deliveryOption, setDeliveryOption] = useState(null);
-  const [deliveryPrice, setDeliveryPrice] = useState(0);
-
-  const handleDeliverySelect = (option, price, event) => {
-    setDeliveryOption(option);
-    setDeliveryPrice(price);
+  const {
+    saving,
+    savingPercentage,
+    cleaningPrepFee,
+    tax,
+    taxAmount,
+    totalDate,
+    totalPrice,
+    flexPrice,
+    quantity,
+    deliveryOption,
+    deliveryPrice,
+  } = useSelector((state) => state.cart);
+  const handleDeliverySelect = (option, event) => {
+    dispatch(setDeliveryOption(option));
 
     const details = event.target.closest("details");
-    if (details) {
-      details.removeAttribute("open");
-    }
+    if (details) details.removeAttribute("open");
   };
 
   const rows = [
     {
       label: `Nightly x $${flexPrice}`,
-      value: `${flexPrice * totalDate}`,
+      value: flexPrice * totalDate,
       Icon: Star,
     },
     { label: "Cleaning & Prep", value: cleaningPrepFee, Icon: Shield },
     { label: `Tax (${tax}%)`, value: taxAmount, Icon: Percent },
+    { label: `Delivery`, value: deliveryPrice, Icon: Truck },
     { label: `Quantity`, value: quantity, Icon: Calculator },
   ];
-
-  const finalTotal = totalPrice + deliveryPrice;
 
   return (
     <div className="rounded-2xl border border-slate-700 p-4 bg-slate-900">
       <h3 className="font-semibold mb-3">Price Breakdown</h3>
+
       <div className="mb-3 rounded-lg bg-emerald-900/40 text-emerald-300 p-3 text-xs flex items-center justify-between border border-emerald-700/40">
         <span>Flex+ savings vs. typical market</span>
         <span className="font-semibold">
           ${Math.round(saving * totalDate * quantity)} ({savingPercentage}% off)
         </span>
       </div>
+
       <div className="space-y-2">
         {rows.map((r) => (
           <div
@@ -105,14 +105,15 @@ export default function PriceBreakdown() {
                       strokeLinejoin="round"
                       strokeWidth="2"
                       d="M19 9l-7 7-7-7"
-                    ></path>
+                    />
                   </svg>
                 </div>
               </summary>
+
               <ul className="absolute left-0 mt-1 w-full bg-slate-800 rounded-lg shadow-lg border border-slate-600 z-10 hidden group-open:block">
                 <li>
                   <button
-                    onClick={(e) => handleDeliverySelect("transport", 0, e)}
+                    onClick={(e) => handleDeliverySelect("transport", e)}
                     className="w-full text-left px-3 py-3 hover:bg-slate-700 flex justify-between items-center border-b border-slate-700 text-sm"
                   >
                     <span>I will transport</span>
@@ -121,7 +122,7 @@ export default function PriceBreakdown() {
                 </li>
                 <li>
                   <button
-                    onClick={(e) => handleDeliverySelect("delivery", 250, e)}
+                    onClick={(e) => handleDeliverySelect("delivery", e)}
                     className="w-full text-left px-3 py-3 hover:bg-slate-700 flex justify-between items-center text-sm"
                   >
                     <span>Add Delivery, Setup & Pickup</span>
@@ -164,8 +165,9 @@ export default function PriceBreakdown() {
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-cyan-400" /> Estimated Total
           </div>
-          <div className="tabular-nums">${Math.round(finalTotal)}</div>
+          <div className="tabular-nums">${Math.round(totalPrice)}</div>
         </div>
+
         <p className="text-xs text-slate-400">
           Displayed pricing is an estimate within the RVEEDOM Flex+ program.
           Final quote may vary based on exact dates, availability, and location

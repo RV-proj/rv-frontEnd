@@ -1,10 +1,10 @@
 "use client";
 
 import { tiers } from "@/_lists/tiers";
-import QualityLevelCard from "@/_ui/QualityLevelCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedQuality } from "@/_lib/store/cartSlice";
 import { useEffect } from "react";
+import QualityLevelCard from "@/_ui/QualityLevelCard";
 
 const QualityLevel = () => {
   const qualityLevelCardData = Object.entries(tiers).map(([key, value]) => ({

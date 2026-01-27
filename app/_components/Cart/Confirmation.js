@@ -20,14 +20,12 @@ export default function Confirmation({ open, onClose, session }) {
     cleaningPrepFee,
     savingPercentage,
     tax,
-    quantity,
+    downPayment,
   } = useSelector((state) => state.cart);
 
   const [tripDescription, setTripDescription] = useState("");
 
   if (!open) return null;
-
-  const deposit = totalPrice * 0.05;
 
   // payment handler
   async function handlePay() {
@@ -187,9 +185,7 @@ export default function Confirmation({ open, onClose, session }) {
             className="w-full bg-linear-to-r from-cyan-400 to-emerald-500 text-black font-semibold px-5 py-4 md:py-3 rounded-lg shadow-lg hover:opacity-90 transition flex items-center justify-center gap-2 text-lg md:text-base"
           >
             <span>Lock in your RV</span>
-            <span className="font-bold">
-              • ${Math.round(deposit * 100) / 100}
-            </span>
+            <span className="font-bold">• ${Math.round(downPayment)}</span>
           </button>
         </div>
       </div>

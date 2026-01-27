@@ -25,7 +25,7 @@ export const tiers = {
     note: "Newer models & more features",
     color: "from-cyan-500 to-cyan-700",
     tag: "bg-cyan-900 text-cyan-200 border-cyan-600",
-    qualityScore: "95",
+    qualityScore: "85",
     images: [
       "./Medium/medium(3).png",
       "./Medium/medium(2).jpg",
