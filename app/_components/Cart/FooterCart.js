@@ -26,6 +26,15 @@ export default function FooterCart({ session }) {
   const isSelected =
     selectedSize && selectedQuality && tripLengthCalc(startDate, endDate) > 3;
 
+  const tripDays = tripLengthCalc(startDate, endDate) || 0;
+  const discountPct = tripDays >= 30 ? 35 : tripDays >= 7 ? 15 : 0;
+  const discountLabel =
+    discountPct === 35
+      ? "Monthly discount"
+      : discountPct === 15
+        ? "Weekly discount"
+        : "";
+
   const handleIncrease = () => {
     dispatch(setQuantity(quantity + 1));
   };
@@ -48,6 +57,11 @@ export default function FooterCart({ session }) {
             <TierBadge tierKey={selectedQuality} />
             <span className="hidden md:inline text-emerald-300 font-medium">
               Save ${saving} ({savingPercentage}%)
+              {discountPct > 0 && (
+                <span className="ml-2 text-slate-300 font-medium">
+                  • {discountLabel} {discountPct}%
+                </span>
+              )}
             </span>
           </div>
         </div>

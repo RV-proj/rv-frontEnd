@@ -5,25 +5,42 @@ export function priceCalc(state) {
     resetPrice(state);
     return;
   }
+
   const data = getPrice(state.selectedSize, state.selectedQuality);
   if (!data) {
     resetPrice(state);
     return;
   }
-  const { flexPrice, marketPrice } = data;
+
+  const { flexPrice, marketPrice, weeklyDiscount, monthlyDiscount } = data;
+
+  const days = Number(state.totalDate || 1);
+  const qty = Number(state.quantity || 1);
+  const delivery = Number(state.deliveryPrice || 0);
+
+  // Rule:
+  // 7+ days & <30 => 15% off
+  // 30+ days => 35% off
+  // else => 0% off
+  let discountRate = 0;
+  if (days >= 30) discountRate = Number(monthlyDiscount ?? 0.35);
+  else if (days >= 7) discountRate = Number(weeklyDiscount ?? 0.15);
+  const rentalSubtotal = flexPrice * days * qty;
+  const discountAmount = rentalSubtotal * discountRate;
+  const discountedRental = rentalSubtotal - discountAmount;
+
+  state.taxAmount = discountedRental * (state.tax / 100);
+
+  state.totalPrice =
+    discountedRental + state.taxAmount + state.cleaningPrepFee + delivery;
+  state.downPayment = Math.round(state.totalPrice * 0.05);
+  const marketTotal = marketPrice * days * qty;
+  state.saving = Math.round(marketTotal - discountedRental);
+
+  state.savingPercentage =
+    marketTotal > 0 ? Math.round((state.saving / marketTotal) * 100) : 0;
 
   state.flexPrice = flexPrice;
-  state.taxAmount = flexPrice * (state.tax / 100);
-
-  const baseTotal = flexPrice + state.taxAmount + state.cleaningPrepFee;
-  const days = state.totalDate || 1;
-  const qty = state.quantity || 1;
-  const delivery = state.deliveryPrice || 0;
-
-  state.totalPrice = baseTotal * qty * days + delivery;
-  state.downPayment = Math.round(state.totalPrice * 0.05);
-  state.saving = marketPrice - flexPrice;
-  state.savingPercentage = Math.round((state.saving / marketPrice) * 100);
 }
 
 function resetPrice(state) {
