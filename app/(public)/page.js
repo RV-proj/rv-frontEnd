@@ -29,7 +29,7 @@ export default function Page() {
       <Divider />
       <OurSecretSauce />
       <Divider />
-      <SampleFloorplans />
+      {/* <SampleFloorplans /> */}
       <Divider />
       <HappyGuests />
       <Divider />

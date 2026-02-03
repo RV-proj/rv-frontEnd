@@ -32,14 +32,18 @@ export default function Confirmation({ open, onClose, session }) {
     try {
       const trimmedDescription = tripDescription.trim();
 
-      const data = await createOrder(deposit, email, {
-        size: selectedSize,
-        quality: selectedQuality,
-        price: totalPrice,
-        startDate: startDate,
-        endDate: endDate,
-        tripDescription: trimmedDescription || null,
-        quantity: quantity,
+      const data = await createOrder({
+        amount_paid: downPayment,
+        email: email,
+        orderData: {
+          size: selectedSize,
+          quality: selectedQuality,
+          price: totalPrice,
+          startDate: startDate,
+          endDate: endDate,
+          tripDescription: trimmedDescription || null,
+          downPayment: downPayment,
+        },
       });
       window.open(data.url, "_blank", "noopener,noreferrer");
     } catch (err) {
