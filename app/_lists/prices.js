@@ -71,7 +71,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1HoVeRGwM2NAGvUE-dRo8wp-luvjUoFEY",
+      "https://drive.google.com/thumbnail?id=1yIrLFFEbtvE0q9o-K6afXeyxUoUWfMOy",
   },
 
   XXL_Basic: {
@@ -96,6 +96,6 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1kTtyqmBqBpuLzcYuyORb2FN5-qQ9rW5f",
+      "https://drive.google.com/thumbnail?id=1RKBLKolslHq54MBRg5rwUVrTJcd-edAX",
   },
 };
