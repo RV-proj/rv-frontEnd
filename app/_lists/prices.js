@@ -5,7 +5,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1RD9RukmWtaxMkLSKdRtUB5H-lnaKyupG",
+      "https://drive.google.com/thumbnail?id=1sq8z9FVpw274Cyk30h5Z_mIDJuO7-Rl0",
   },
   M_Standard: {
     flexPrice: 127,
@@ -21,7 +21,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1e4cdnix9YTzUpQ_6fm21G2G3FvvwkVIG",
+      "https://drive.google.com/thumbnail?id=1y92CIdvVKCgwdS-g1wOVBRZA3N7H_D7d",
   },
 
   L_Basic: {
@@ -30,7 +30,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=10Pyxj2KYAnel7-B98uy2XHopOFDng5n8",
+      "https://drive.google.com/thumbnail?id=10_LWNMwq2bwsY6tEyyBgDxLxmTwsxPLn",
   },
   L_Standard: {
     flexPrice: 147,
@@ -46,7 +46,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1e4cdnix9YTzUpQ_6fm21G2G3FvvwkVIG",
+      "https://drive.google.com/thumbnail?id=1V2OKZ1S4nkY_iyE-fiVFyqD0-ygd6D6z",
   },
 
   XL_Basic: {
@@ -55,7 +55,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=10Pyxj2KYAnel7-B98uy2XHopOFDng5n8",
+      "https://drive.google.com/thumbnail?id=1wo8l7Sxmdb9eLiGOS-w_CP3rcmzpeVES",
   },
   XL_Standard: {
     flexPrice: 167,
@@ -71,7 +71,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1yIrLFFEbtvE0q9o-K6afXeyxUoUWfMOy",
+      "https://drive.google.com/thumbnail?id=1yIrLFFEbtvE0q9o-K6afXeyxUoUWfMO",
   },
 
   XXL_Basic: {
@@ -80,7 +80,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1dghKv5Pl8loXQ6f7n2fU1zwLGEZlAiFp",
+      "https://drive.google.com/thumbnail?id=1vqAUMZo2aQJsvBNqkv7KxbxFonorOfSH",
   },
   XXL_Standard: {
     flexPrice: 187,
@@ -88,7 +88,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=16BkMtvyXCuNhjUYUosV3xbEi5ECMfivv",
+      "https://drive.google.com/thumbnail?id=19UkD9LmUfx9YaOCXIwxvWoGDwtFHB0A8",
   },
   XXL_Premium: {
     flexPrice: 207,
