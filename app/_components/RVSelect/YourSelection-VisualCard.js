@@ -15,13 +15,13 @@ export default function VisualCard() {
 
   const size = sizes[selectedSize];
   const quality = tiers[selectedQuality];
-  // const { image } = getPrice(selectedSize, selectedQuality);
+  const { image } = getPrice(selectedSize, selectedQuality);
 
   return (
     <div className="rounded-3xl overflow-hidden border border-slate-700 bg-slate-900">
       <div className="aspect-video relative">
         <img
-          src={size.img}
+          src={image}
           alt="rvImage"
           className="absolute inset-0 w-full h-full object-cover"
         />
