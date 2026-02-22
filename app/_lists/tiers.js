@@ -50,7 +50,7 @@ export const tiers = {
       "https://drive.google.com/thumbnail?id=1tLdy-AaeOt_2W0ogoJLMwKetTjuFdbS4",
       "https://drive.google.com/thumbnail?id=1GmNOIdRegeq0qrib9jAEXOR3bN4F1x3t",
       "https://drive.google.com/thumbnail?id=1s5pV5kDKwubshQbE8Ism0lHfSqarle5h",
-      "https://drive.google.com/thumbnail?id=",
+      "https://drive.google.com/thumbnail?id=1OlG7zCuw5ZGLVD0ifinsNmEJZ3SFFlbt",
     ],
     benefits: [
       "High comfort standard",
