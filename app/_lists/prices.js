@@ -5,7 +5,7 @@ export const prices = {
     weeklyDiscount: 0.15,
     monthlyDiscount: 0.35,
     image:
-      "https://drive.google.com/thumbnail?id=1sq8z9FVpw274Cyk30h5Z_mIDJuO7-Rl&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1sq8z9FVpw274Cyk30h5Z_mIDJuO7-Rl0&sz=w1000",
   },
   M_Standard: {
     flexPrice: 127,
