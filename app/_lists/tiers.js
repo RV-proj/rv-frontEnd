@@ -7,10 +7,10 @@ export const tiers = {
     tag: "bg-slate-800 text-slate-200 border-slate-600",
     qualityScore: "75",
     images: [
-      "https://drive.google.com/thumbnail?id=1Ziv2_WmPUWhF3DuZBhtzfZNV_y8B9zo1",
-      "https://drive.google.com/thumbnail?id=1Z47Bt6qfGFFO1qJvQEswTm3p556V5sgH",
-      "https://drive.google.com/thumbnail?id=1EJnuQ52U2uwTc1NUKgnGuU6zESPy_AmO",
-      "https://drive.google.com/thumbnail?id=1zeZGTTIQE6SRkkapePcylr20RWlG5XfR",
+      "https://drive.google.com/thumbnail?id=1Ziv2_WmPUWhF3DuZBhtzfZNV_y8B9zo1&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1Z47Bt6qfGFFO1qJvQEswTm3p556V5sgH&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1EJnuQ52U2uwTc1NUKgnGuU6zESPy_AmO&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1zeZGTTIQE6SRkkapePcylr20RWlG5XfR&sz=w1000",
     ],
     benefits: [
       "Clean & comfortable",
@@ -27,10 +27,10 @@ export const tiers = {
     tag: "bg-cyan-900 text-cyan-200 border-cyan-600",
     qualityScore: "85",
     images: [
-      "https://drive.google.com/thumbnail?id=1eFeHnU7AcGXkaxVHBlgayRAFc2CJSWUu",
-      "https://drive.google.com/thumbnail?id=1XkpjXHvRhGrOsXcad6LCopwXho74Fk41",
-      "https://drive.google.com/thumbnail?id=1gt8y1FndlkNzH52DspxEIoX8OMutBZJ1",
-      "https://drive.google.com/thumbnail?id=1b69_eB95ybHTzMylARtf5HFfRCwjxR",
+      "https://drive.google.com/thumbnail?id=1eFeHnU7AcGXkaxVHBlgayRAFc2CJSWUu&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1XkpjXHvRhGrOsXcad6LCopwXho74Fk41&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1gt8y1FndlkNzH52DspxEIoX8OMutBZJ1&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1b69_eB95ybHTzMylARtf5HFfRCwjxR-W&sz=w1000",
     ],
     benefits: [
       "Newer model or finish",
@@ -47,10 +47,10 @@ export const tiers = {
     tag: "bg-gradient-to-r from-cyan-950 via-fuchsia-950 to-purple-950 text-fuchsia-200 border-fuchsia-700",
     qualityScore: "95",
     images: [
-      "https://drive.google.com/thumbnail?id=1tLdy-AaeOt_2W0ogoJLMwKetTjuFdbS4",
-      "https://drive.google.com/thumbnail?id=1GmNOIdRegeq0qrib9jAEXOR3bN4F1x3t",
-      "https://drive.google.com/thumbnail?id=1s5pV5kDKwubshQbE8Ism0lHfSqarle5h",
-      "https://drive.google.com/thumbnail?id=1OlG7zCuw5ZGLVD0ifinsNmEJZ3SFFlbt",
+      "https://drive.google.com/thumbnail?id=1tLdy-AaeOt_2W0ogoJLMwKetTjuFdbS4&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1GmNOIdRegeq0qrib9jAEXOR3bN4F1x3t&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1s5pV5kDKwubshQbE8Ism0lHfSqarle5h&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1OlG7zCuw5ZGLVD0ifinsNmEJZ3SFFlbt&sz=w1000",
     ],
     benefits: [
       "High comfort standard",
